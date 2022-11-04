@@ -519,10 +519,16 @@ bool overlay_window::apply_size_from_orig()
 
 int WINAPI overlay_window::use_callback_for_window_pos(HWND hwndParam, RECT rectParam)
 {
+	log_debug << "Using callback internal" << std::endl;
 	if (callback_window_pos_ptr != nullptr)
 	{
+		log_debug << "Callback window is not null" << std::endl;
+		log_debug << "Callback is: " << callback_window_pos_ptr << std::endl;
 		callback_window_pos_ptr(hwndParam, rectParam);
+	} else {
+		log_debug << "window Is nullpointer" << std::endl;
 	}
+
 	return 0;
 }
 
@@ -533,6 +539,7 @@ void overlay_window::win_event_proc(HWINEVENTHOOK hook, DWORD event, HWND hwnd, 
 		RECT rc;
 		if (GetWindowRect(orig_handle, &rc))
 		{
+			log_debug << "Using callback" << std::endl;
 			use_callback_for_window_pos(orig_handle, rc);
 		}
 	}
@@ -542,12 +549,9 @@ void overlay_window::win_event_proc(HWINEVENTHOOK hook, DWORD event, HWND hwnd, 
 //
 void CALLBACK LOW_LEVEL_win_event_proc(HWINEVENTHOOK hook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD dwEventThread, DWORD dwmsEventTime)
 {
-   for (std::list<overlay_window*>::iterator p = overlayList.begin();
-        p != overlayList.end(); ++p)
-      (*p)->win_event_proc(hook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime);
-	/*std::for_each(overlayList.begin(), overlayList.end(), [&hook, &event, &hwnd, &idObject, &idChild, &dwEventThread, &dwmsEventTime](std::shared_ptr<overlay_window> n) {
-		n->win_event_proc(hook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime);
-	});*/
+	for (std::list<overlay_window*>::iterator p = overlayList.begin(); p != overlayList.end(); ++p) {
+		(*p)->win_event_proc(hook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime);
+	}
 }
 
 bool overlay_window::hook_win_pos()
@@ -567,7 +571,7 @@ bool overlay_window::hook_win_pos()
 
 		window_pos_listening = true;
 
-		log_info << "APP: Window Position" << std::endl;
+		log_info << "APP: Hook Window Position" << std::endl;
 
 		return true;
 	}

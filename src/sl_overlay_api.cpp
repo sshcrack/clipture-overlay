@@ -15,6 +15,7 @@
 #include "sl_overlay_api.h"
 #include <WinUser.h>
 #include <windows.h>
+#include <algorithm>
 
 #include "overlay_logging.h"
 #include "sl_overlay_window.h"
@@ -171,7 +172,7 @@ int WINAPI remove_overlay(int id)
 
 static int (*callback_keyboard_ptr)(WPARAM, LPARAM) = nullptr;
 static int (*callback_mouse_ptr)(WPARAM, LPARAM) = nullptr;
-static int (*callback_win_position_ptr)(HWND, RECT) = nullptr;
+static int (*callback_win_position_ptr)(HWND, LPRECT) = nullptr;
 static int (*callback_switch_ptr)() = nullptr;
 
 int WINAPI set_callback_for_keyboard_input(int (*ptr)(WPARAM, LPARAM))
@@ -213,19 +214,15 @@ int WINAPI use_callback_for_mouse_input(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-int WINAPI use_callback_for_window_position(HWND hwndParam, RECT rectParam)
-{
-	if (callback_win_position_ptr != nullptr)
-	{
-		callback_win_position_ptr(hwndParam, rectParam);
-	}
-	return 0;
-}
 
 int WINAPI set_callback_for_window_position(int (*ptr)(HWND, RECT))
 {
-	callback_win_position_ptr = ptr;
+	log_debug << "Set Callback for position" << std::endl;
 
+	auto winList = smg_overlays::get_instance()->showing_windows;
+	std::for_each(winList.begin(), winList.end(), [&ptr](std::shared_ptr<overlay_window>& n) {
+		n ->callback_window_pos_ptr = ptr;
+	});
 	return 0;
 }
 

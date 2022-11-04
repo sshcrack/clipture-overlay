@@ -65,6 +65,14 @@ function createWindow() {
 		return 1;
 	});
 
+	streamlabs_overlays.setWindowPosCallback((e, t) => {
+		const width = t.right - t.left
+		const height = t.bottom - t.top
+		win.setContentSize(width, height)
+		
+		streamlabs_overlays.setPosition(overlayid, t.left, t.top, width, height);
+	})
+
 	streamlabs_overlays.setKeyboardCallback((eventType, keyCodeValue) => {
 		//console.log('get KeyboardCallback: '+ eventType +', '+ keyCodeValue + ', '+ BrowserWindow.getAllWindows[0].getNativeWindowHandle());
 		console.log('get KeyboardCallback: ' + eventType + ', ' + keyCodeValue);

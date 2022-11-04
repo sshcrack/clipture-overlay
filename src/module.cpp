@@ -70,7 +70,7 @@ napi_value Start(napi_env env, napi_callback_info args)
 			user_mouse_callback_info = new callback_mouse_method_t();
 		}
 
-		if(win_position_callback_info == nullptr)
+		if (win_position_callback_info == nullptr)
 		{
 			win_position_callback_info = new callback_win_position_method_t();
 		}
@@ -94,13 +94,6 @@ napi_value Stop(napi_env env, napi_callback_info args)
 		delete user_mouse_callback_info;
 		user_mouse_callback_info = nullptr;
 	}
-
-	if (win_position_callback_info != nullptr)
-	{
-		delete win_position_callback_info;
-		win_position_callback_info = nullptr;
-	}
-
 
 	int thread_stop_status = 0;
 	napi_value ret = nullptr;
@@ -246,6 +239,7 @@ napi_value SwitchToInteractive(napi_env env, napi_callback_info args)
 napi_value SetKeyboardCallback(napi_env env, napi_callback_info args)
 {
 	log_info << "APP: SetKeyboardCallback " << std::endl;
+	log_info << user_keyboard_callback_info << std::endl;
 	if (user_keyboard_callback_info->ready)
 	{
 		user_keyboard_callback_info->ready = false;
@@ -280,12 +274,14 @@ napi_value SetKeyboardCallback(napi_env env, napi_callback_info args)
 	return nullptr;
 }
 
-
 napi_value SetWindowPosCallback(napi_env env, napi_callback_info args)
 {
 	log_info << "APP: SetWindowPosCallback " << std::endl;
+	log_info << win_position_callback_info << std::endl;
+	log_debug << "Is ready win position" << win_position_callback_info -> ready << "end" << std::endl;
 	if (win_position_callback_info->ready)
 	{
+		log_debug << "Delete reference win position" << win_position_callback_info << std::endl;
 		win_position_callback_info->ready = false;
 		napi_delete_reference(env, win_position_callback_info->js_this);
 	}
@@ -296,22 +292,27 @@ napi_value SetWindowPosCallback(napi_env env, napi_callback_info args)
 	napi_value js_callback;
 	napi_valuetype is_function = napi_undefined;
 
+	log_debug << "APP: WindowPos get next check " << std::endl;
 	if (napi_get_cb_info(env, args, &argc, argv, &js_this, 0) != napi_ok)
 		return failed_ret;
 
+	log_debug << "APP: Get Prototype napi" << std::endl;
 	//check if js side of callback is valid
 	if (napi_get_prototype(env, argv[0], &js_callback) != napi_ok)
 		return failed_ret;
 
+	log_debug << "APP: Get type" << std::endl;
 	if (napi_typeof(env, js_callback, &is_function) != napi_ok)
 		return failed_ret;
 
 	if (is_function == napi_function)
 	{
+		log_debug << "APP: Create Reference" << std::endl;
 		//save reference and go to creating threadsafe function
 		if (napi_create_reference(env, argv[0], 1, &win_position_callback_info->js_this) != napi_ok)
 			return failed_ret;
 
+		log_debug << "APP: func_window_pos" << std::endl;
 		win_position_callback_info->callback_init(env, args, "func_window_pos");
 	}
 
@@ -321,6 +322,7 @@ napi_value SetWindowPosCallback(napi_env env, napi_callback_info args)
 napi_value SetMouseCallback(napi_env env, napi_callback_info args)
 {
 	log_info << "APP: SetMouseCallback " << std::endl;
+	log_info << user_mouse_callback_info << std::endl;
 	if (user_mouse_callback_info->ready)
 	{
 		user_mouse_callback_info->ready = false;

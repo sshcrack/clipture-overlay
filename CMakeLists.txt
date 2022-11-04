@@ -25,7 +25,8 @@ set(OVERLAY_SOURCES
 	src/sl_overlays_settings.cpp
 	src/sl_overlays.cpp
 	src/stdafx.cpp
-	src/user_input_callback.cpp )
+	src/user_input_callback.cpp
+	src/win_position_callback.cpp )
 
 SET(PROJECT_INCLUDE_PATHS ${NODEJS_INCLUDE_DIRS} "${CMAKE_SOURCE_DIR}/include/" )
 

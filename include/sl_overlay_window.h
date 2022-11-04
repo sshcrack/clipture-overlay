@@ -37,7 +37,7 @@ class overlay_window
 	public:
 	bool window_pos_listening = false;
 
-	int (*callback_window_pos_ptr)(HWND, RECT);
+	int (*callback_window_pos_ptr)(HWND, RECT) = nullptr;
 
 	RECT get_rect();
 	bool set_rect(RECT& new_rect);

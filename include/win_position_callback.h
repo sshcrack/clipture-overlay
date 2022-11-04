@@ -8,9 +8,6 @@
 #include <stdlib.h>
 #include <string>
 
-#include <windows.h>
-#include <WinUser.h>
-
 #include "sl_overlay_api.h"
 
 #include <node_api.h>
@@ -18,7 +15,7 @@
 
 struct win_event_t;
 
-napi_status napi_create_and_set_named_property(napi_env& env, napi_value& obj, const char* value_name, const int value) noexcept;
+//napi_status napi_create_and_set_named_property(napi_env& env, napi_value& obj, const char* value_name, const int value) noexcept;
 
 struct callback_win_method_t
 {
@@ -45,7 +42,7 @@ struct callback_win_method_t
 	napi_status callback_method_call_tsf(bool block);
 	napi_status callback_init(napi_env env, napi_callback_info info, const char* name);
 	virtual void set_callback() = 0;
-	int use_callback(HWND hwndParam, RECT  rectParam);
+	int use_callback(HWND hwndParam, RECT rectParam);
 
 	bool ready;
 	static bool set_intercept_active(bool) noexcept;

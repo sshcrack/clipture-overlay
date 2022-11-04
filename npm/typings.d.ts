@@ -21,6 +21,14 @@ export type OverlayInfo = {
 /** Native windows handle (WinAPI), encoded as a Node Buffer **/
 export type HWND = Buffer;
 
+/** Native LPRECT Element given by window pos change event. **/
+export type RECT = {
+  top: number,
+  bottom: number,
+  left: number,
+  right: number
+}
+
 /**
  * Status of the overlay thread
  */
@@ -184,8 +192,15 @@ export function setMouseCallback(callback: Function): void;
 export function setKeyboardCallback(callback: Function): void;
 
 /**
+ * Set callback for keyboard events 
+ * setKeyboardCallback( (eventType, keyCode) => {
+ * 
+ */
+export function setWindowPosCallback(callback: (hwnd: number, rect: RECT) => unknown): void;
+
+/**
  * Switch on/off interactive mode for overlays
  * In this mode overlay module intercept user keyboard and mouse events and use callbacks to send them to frontend
  * 
  */
-export function switchInteractiveMode( active: Boolean ): void;
+export function switchInteractiveMode(active: Boolean): void;

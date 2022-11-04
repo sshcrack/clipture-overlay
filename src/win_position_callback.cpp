@@ -12,22 +12,20 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ******************************************************************************/
 
-#include <WinUser.h>
+#include "win_position_callback.h"
 #include <errno.h>
 #include <iostream>
 #include <map>
-#include <windows.h>
 #include "overlay_logging.h"
-#include "win_position_callback.h"
 
 callback_win_position_method_t* win_position_callback_info = nullptr;
 
 struct win_event_t
 {
 	HWND hwndParam;
-	LPRECT rectParam;
+	RECT rectParam;
 
-	win_event_t(HWND _hwndParam, LPRECT _rectParam) noexcept : hwndParam(_hwndParam), rectParam(_rectParam) {}
+	win_event_t(HWND _hwndParam, RECT _rectParam) noexcept : hwndParam(_hwndParam), rectParam(_rectParam) {}
 };
 
 callback_win_method_t::callback_win_method_t()
@@ -51,16 +49,16 @@ void callback_win_method_t::callback_method_reset() noexcept
 	result_int = 0;
 }
 
-bool is_intercept_active = false;
+bool win_is_intercept_active = false;
 bool callback_win_method_t::set_intercept_active(bool new_state) noexcept
 {
-	is_intercept_active = new_state;
+	win_is_intercept_active = new_state;
 	return new_state;
 }
 
 bool callback_win_method_t::get_intercept_active() noexcept
 {
-	return is_intercept_active;
+	return win_is_intercept_active;
 }
 
 napi_status callback_win_position_method_t::set_callback_args_values(napi_env env)
@@ -83,12 +81,13 @@ napi_status callback_win_position_method_t::set_callback_args_values(napi_env en
 
 	if (status == napi_ok)
 	{
+		RECT rect = event->rectParam;
 		napi_value bottom, top, right, left;
 		status = napi_create_object(env, &argv_to_cb[1]);
-		long r_bottom = event->rectParam->bottom;
-		long r_top = event->rectParam->top;
-		long r_right = event->rectParam->right;
-		long r_left = event->rectParam->left;
+		long r_bottom = rect.bottom;
+		long r_top = rect.top;
+		long r_right = rect.right;
+		long r_left = rect.left;
 
 
 		status = napi_create_int64(env, r_bottom, &bottom);
@@ -168,9 +167,9 @@ int use_callback_win_position(HWND hwndParam, RECT rectParam)
 	return ret;
 }
 
-void callback_finalize(napi_env env, void* data, void* hint)
+void win_callback_finalize(napi_env env, void* data, void* hint)
 {
-	log_info << "APP: callback_finalize " << std::endl;
+	log_info << "APP: win_callback_finalize " << std::endl;
 }
 
 napi_status callback_win_method_t::callback_init(napi_env env, napi_callback_info info, const char* name)
@@ -226,6 +225,8 @@ void callback_win_method_t::async_callback()
 	napi_value ret_value;
 	napi_value recv;
 
+
+	log_debug << "Async callback" << std::endl;
 	napi_handle_scope scope;
 
 	status = napi_open_handle_scope(env_this, &scope);
@@ -251,6 +252,7 @@ void callback_win_method_t::async_callback()
 							status = napi_get_global(env_this, &global);
 							if (status == napi_ok)
 							{
+								log_debug << "Call function js_cb" << std::endl;
 								status = napi_call_function(env_this, global, js_cb, get_argc_to_cb(), get_argv_to_cb(), &ret_value);
 							}
 						}
@@ -274,9 +276,10 @@ void callback_win_method_t::async_callback()
 
 void callback_win_position_method_t::set_callback()
 {
+	log_debug << "Set win callback" << std::endl;
 	set_callback_for_window_position(&use_callback_win_position);
 }
-
+/*
 napi_status napi_create_and_set_named_property(napi_env& env, napi_value& obj, const char* value_name, const int value) noexcept
 {
 	napi_status status;
@@ -287,4 +290,4 @@ napi_status napi_create_and_set_named_property(napi_env& env, napi_value& obj, c
 		status = napi_set_named_property(env, obj, value_name, set_value);
 	}
 	return status;
-}
+}*/
