@@ -50,7 +50,7 @@ export const enum OverlayThreadStatus {
  * 
  * Return: 1 if everything went fine. 
  */
-export function start(logPath: String): number;
+export function start(logPath?: String): number;
 
 /**
  * Stop the overlay thread. No operations other than `start` and `getStatus` should be performed
@@ -192,9 +192,10 @@ export function setMouseCallback(callback: Function): void;
 export function setKeyboardCallback(callback: Function): void;
 
 /**
- * Set callback for keyboard events 
- * setKeyboardCallback( (eventType, keyCode) => {
- * 
+ * Set callback for window resize/reposition events
+ * hwnd = the hwnd of the window the position is from
+ * setWindowPosCallback( (hwnd, rect) => {
+ * })
  */
 export function setWindowPosCallback(callback: (hwnd: number, rect: RECT) => unknown): void;
 
