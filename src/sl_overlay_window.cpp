@@ -17,7 +17,10 @@
 #include "sl_overlays_settings.h"
 #include "stdafx.h"
 
+#include <WinUser.h>
+#include <algorithm>
 #include <iostream>
+#include <windows.h>
 #include "overlay_logging.h"
 
 void overlay_window::set_transparency(int transparency, bool save_as_normal)
@@ -133,6 +136,7 @@ overlay_window::~overlay_window()
 	clean_resources();
 }
 
+std::list<overlay_window*> overlayList;
 overlay_window::overlay_window()
 {
 	last_content_chage_ticks = 0;
@@ -152,6 +156,10 @@ overlay_window::overlay_window()
 	autohide_after = 0;
 	autohidden = false;
 	autohide_by_transparency = 50;
+
+	auto temp2 = this;
+	//auto temp = std::make_shared<overlay_window*>(temp2);
+	overlayList.push_back(temp2);
 }
 
 overlay_window_gdi::overlay_window_gdi()
@@ -298,13 +306,13 @@ bool overlay_window::set_cached_image(std::shared_ptr<overlay_frame> save_frame)
 			frame = nullptr;
 		}
 	}
-	
-	reset_autohide(); 
+
+	reset_autohide();
 
 	return true;
 }
 
-bool overlay_window::reset_autohide() 
+bool overlay_window::reset_autohide()
 {
 	if (autohidden)
 	{
@@ -507,6 +515,78 @@ bool overlay_window::apply_size_from_orig()
 	ret = GetWindowRect(orig_handle, &rect);
 
 	return ret;
+}
+
+int WINAPI overlay_window::use_callback_for_window_pos(HWND hwndParam, RECT rectParam)
+{
+	if (callback_window_pos_ptr != nullptr)
+	{
+		callback_window_pos_ptr(hwndParam, rectParam);
+	}
+	return 0;
+}
+
+void overlay_window::win_event_proc(HWINEVENTHOOK hook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD idEventThread, DWORD time)
+{
+	if (hwnd == orig_handle && idObject == OBJID_WINDOW && idChild == CHILDID_SELF && event == EVENT_OBJECT_LOCATIONCHANGE)
+	{
+		RECT rc;
+		if (GetWindowRect(orig_handle, &rc))
+		{
+			use_callback_for_window_pos(orig_handle, rc);
+		}
+	}
+}
+
+// Callback function that handles events.
+//
+void CALLBACK LOW_LEVEL_win_event_proc(HWINEVENTHOOK hook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD dwEventThread, DWORD dwmsEventTime)
+{
+   for (std::list<overlay_window*>::iterator p = overlayList.begin();
+        p != overlayList.end(); ++p)
+      (*p)->win_event_proc(hook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime);
+	/*std::for_each(overlayList.begin(), overlayList.end(), [&hook, &event, &hwnd, &idObject, &idChild, &dwEventThread, &dwmsEventTime](std::shared_ptr<overlay_window> n) {
+		n->win_event_proc(hook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime);
+	});*/
+}
+
+bool overlay_window::hook_win_pos()
+{
+	if (!window_pos_listening)
+	{
+		//print window title
+		/*TCHAR title[256];
+		GetWindowText(orig_handle, title, 256);
+		std::wstring title_wstr(title);
+		std::string title_str(title_wstr.begin(), title_wstr.end());
+		log_debug << "APP: hook_win_pos catch window - " << title_str << std::endl;
+*/
+		DWORD processId;
+		DWORD threadId = GetWindowThreadProcessId(orig_handle, &processId);
+		winPosHook = SetWinEventHook(EVENT_OBJECT_LOCATIONCHANGE, EVENT_OBJECT_LOCATIONCHANGE, nullptr, LOW_LEVEL_win_event_proc, processId, threadId, WINEVENT_OUTOFCONTEXT);
+
+		window_pos_listening = true;
+
+		log_info << "APP: Window Position" << std::endl;
+
+		return true;
+	}
+
+	return false;
+}
+
+bool overlay_window::unhook_win_pos()
+{
+	if (window_pos_listening)
+	{
+		log_debug << "APP: unhook_win_pos" << std::endl;
+		UnhookWinEvent(winPosHook);
+		window_pos_listening = false;
+
+		return true;
+	}
+
+	return false;
 }
 
 bool overlay_window::create_window()

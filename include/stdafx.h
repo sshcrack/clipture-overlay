@@ -48,9 +48,9 @@ Node module. - control by node module api.
 enum class sl_overlay_thread_state : int
 {
 	starting = 0x0020,
-	runing = 0x0040,
+	running = 0x0040,
 	stopping = 0x0080,
-	destoyed = 0x0100
+	destroyed = 0x0100
 };
 
 const int COMMAND_SHOW_OVERLAYS = 1;

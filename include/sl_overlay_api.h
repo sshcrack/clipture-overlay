@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 #include <string>
+#include <windows.h>
+#include <WinUser.h>
 
 struct overlay_frame;
 class smg_overlays;
@@ -27,10 +29,12 @@ int WINAPI set_overlay_visibility(int id, bool visibility);
 int WINAPI set_overlay_autohide(int id, int autohide_timeout, int autohide_transparency);
 
 int WINAPI set_callback_for_keyboard_input(int (*ptr)(WPARAM, LPARAM));
+int WINAPI set_callback_for_window_position(int (*ptr)(HWND, RECT));
 int WINAPI set_callback_for_mouse_input(int (*ptr)(WPARAM, LPARAM));
 int WINAPI set_callback_for_switching_input(int (*ptr)());
 
 int WINAPI use_callback_for_keyboard_input(WPARAM wParam, LPARAM lParam);
+int WINAPI use_callback_for_window_position(HWND hwndParam, RECT rectParam);
 int WINAPI use_callback_for_mouse_input(WPARAM wParam, LPARAM lParam);
 int WINAPI use_callback_for_switching_input();
 

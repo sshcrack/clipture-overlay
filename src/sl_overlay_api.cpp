@@ -13,6 +13,8 @@
 ******************************************************************************/
 
 #include "sl_overlay_api.h"
+#include <WinUser.h>
+#include <windows.h>
 
 #include "overlay_logging.h"
 #include "sl_overlay_window.h"
@@ -29,7 +31,7 @@ extern sl_overlay_thread_state thread_state;
 int WINAPI start_overlays_thread()
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::destoyed)
+	if (thread_state != sl_overlay_thread_state::destroyed)
 	{
 		thread_state_mutex.unlock();
 		return 0;
@@ -45,7 +47,7 @@ int WINAPI start_overlays_thread()
 		} else
 		{
 			thread_state_mutex.lock();
-			thread_state = sl_overlay_thread_state::destoyed;
+			thread_state = sl_overlay_thread_state::destroyed;
 			thread_state_mutex.unlock();
 			return 0;
 		}
@@ -55,7 +57,7 @@ int WINAPI start_overlays_thread()
 int WINAPI stop_overlays_thread()
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return 0;
@@ -85,14 +87,14 @@ std::string get_thread_status_name()
 	case sl_overlay_thread_state::starting:
 		ret = "starting";
 		break;
-	case sl_overlay_thread_state::runing:
-		ret = "runing";
+	case sl_overlay_thread_state::running:
+		ret = "running";
 		break;
 	case sl_overlay_thread_state::stopping:
 		ret = "stopping";
 		break;
-	case sl_overlay_thread_state::destoyed:
-		ret = "destoyed";
+	case sl_overlay_thread_state::destroyed:
+		ret = "destroyed";
 		break;
 	}
 	return ret;
@@ -101,7 +103,7 @@ std::string get_thread_status_name()
 int WINAPI get_overlays_count()
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return 0;
@@ -117,7 +119,7 @@ int WINAPI get_overlays_count()
 int WINAPI show_overlays()
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return 0;
@@ -133,7 +135,7 @@ int WINAPI show_overlays()
 int WINAPI hide_overlays()
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return 0;
@@ -154,7 +156,7 @@ bool WINAPI is_overlays_hidden()
 int WINAPI remove_overlay(int id)
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return 0;
@@ -169,6 +171,7 @@ int WINAPI remove_overlay(int id)
 
 static int (*callback_keyboard_ptr)(WPARAM, LPARAM) = nullptr;
 static int (*callback_mouse_ptr)(WPARAM, LPARAM) = nullptr;
+static int (*callback_win_position_ptr)(HWND, RECT) = nullptr;
 static int (*callback_switch_ptr)() = nullptr;
 
 int WINAPI set_callback_for_keyboard_input(int (*ptr)(WPARAM, LPARAM))
@@ -210,6 +213,22 @@ int WINAPI use_callback_for_mouse_input(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
+int WINAPI use_callback_for_window_position(HWND hwndParam, RECT rectParam)
+{
+	if (callback_win_position_ptr != nullptr)
+	{
+		callback_win_position_ptr(hwndParam, rectParam);
+	}
+	return 0;
+}
+
+int WINAPI set_callback_for_window_position(int (*ptr)(HWND, RECT))
+{
+	callback_win_position_ptr = ptr;
+
+	return 0;
+}
+
 int WINAPI use_callback_for_switching_input()
 {
 	if (callback_switch_ptr != nullptr)
@@ -240,7 +259,7 @@ int WINAPI add_overlay_by_hwnd(const void* hwnd_array, size_t array_size)
 	if (hwnd_array != nullptr && array_size == sizeof(HWND))
 	{
 		thread_state_mutex.lock();
-		if (thread_state != sl_overlay_thread_state::runing)
+		if (thread_state != sl_overlay_thread_state::running)
 		{
 			thread_state_mutex.unlock();
 		} else
@@ -261,7 +280,7 @@ int WINAPI paint_overlay_cached_buffer(int overlay_id, std::shared_ptr<overlay_f
 	int ret = -1;
 	{
 		thread_state_mutex.lock();
-		if (thread_state != sl_overlay_thread_state::runing)
+		if (thread_state != sl_overlay_thread_state::running)
 		{
 			thread_state_mutex.unlock();
 		} else
@@ -281,14 +300,13 @@ int WINAPI paint_overlay_cached_buffer(int overlay_id, std::shared_ptr<overlay_f
 					}
 				} else
 				{
-					log_debug << "APP: paint_overlay_cached_buffer " << overlay_id << ", size " << width << "x" << height
-					          << ", for " << overlay_rect.right - overlay_rect.left << "x"
-					          << overlay_rect.bottom - overlay_rect.top << ", at [" << overlay_rect.left << ":"<< overlay_rect.top<< "]"<< std::endl;
+					log_debug << "APP: paint_overlay_cached_buffer " << overlay_id << ", size " << width << "x" << height << ", for " << overlay_rect.right - overlay_rect.left << "x"
+					          << overlay_rect.bottom - overlay_rect.top << ", at [" << overlay_rect.left << ":" << overlay_rect.top << "]" << std::endl;
 
 					overlay_rect.right = overlay_rect.left + width;
 					overlay_rect.bottom = overlay_rect.top + height;
 
-					overlay->apply_new_rect(overlay_rect);	
+					overlay->apply_new_rect(overlay_rect);
 
 					ret = 0;
 				}
@@ -305,7 +323,7 @@ int WINAPI paint_overlay_from_buffer(int overlay_id, const void* image_array, si
 	int ret = -1;
 	{
 		thread_state_mutex.lock();
-		if (thread_state != sl_overlay_thread_state::runing)
+		if (thread_state != sl_overlay_thread_state::running)
 		{
 			thread_state_mutex.unlock();
 		} else
@@ -315,8 +333,7 @@ int WINAPI paint_overlay_from_buffer(int overlay_id, const void* image_array, si
 				std::shared_ptr<overlay_window> overlay = smg_overlays::get_instance()->get_overlay_by_id(overlay_id);
 				RECT overlay_rect = overlay->get_rect();
 
-				if (overlay != nullptr && width == overlay_rect.right - overlay_rect.left &&
-				    height == overlay_rect.bottom - overlay_rect.top)
+				if (overlay != nullptr && width == overlay_rect.right - overlay_rect.left && height == overlay_rect.bottom - overlay_rect.top)
 				{
 					overlay->apply_image_from_buffer(image_array, array_size, width, height);
 				}
@@ -330,7 +347,7 @@ int WINAPI paint_overlay_from_buffer(int overlay_id, const void* image_array, si
 int WINAPI set_overlay_position(int id, int x, int y, int width, int height)
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 
@@ -359,7 +376,7 @@ int WINAPI set_overlay_position(int id, int x, int y, int width, int height)
 int WINAPI set_overlay_transparency(int id, int transparency)
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return -1;
@@ -386,7 +403,7 @@ int WINAPI set_overlay_transparency(int id, int transparency)
 int WINAPI set_overlay_visibility(int id, bool visibility)
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return -1;
@@ -409,7 +426,7 @@ int WINAPI set_overlay_visibility(int id, bool visibility)
 int WINAPI set_overlay_autohide(int id, int autohide_timeout, int autohide_transparency)
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return -1;
@@ -442,7 +459,7 @@ int WINAPI set_overlay_autohide(int id, int autohide_timeout, int autohide_trans
 std::shared_ptr<smg_overlays> get_overlays()
 {
 	thread_state_mutex.lock();
-	if (thread_state != sl_overlay_thread_state::runing)
+	if (thread_state != sl_overlay_thread_state::running)
 	{
 		thread_state_mutex.unlock();
 		return nullptr;

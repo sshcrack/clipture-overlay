@@ -13,6 +13,7 @@
 ******************************************************************************/
 
 #include "user_input_callback.h"
+#include "win_position_callback.h"
 
 #include "sl_overlay_api.h" // NOLINT(build/include)
 #include "sl_overlay_window.h"
@@ -27,12 +28,15 @@
 #include "overlay_paint_frame.h"
 #include "overlay_paint_frame_js.h"
 
+#include <stdio.h>
+#include <windows.h>
+
 const napi_value failed_ret = nullptr;
 napi_value Start(napi_env env, napi_callback_info args)
 {
 	int thread_start_status = 0;
 	napi_value ret = nullptr;
-	
+
 	size_t argc = 1;
 	napi_value argv[1];
 	if (napi_get_cb_info(env, args, &argc, argv, NULL, NULL) != napi_ok)
@@ -44,13 +48,13 @@ napi_value Start(napi_env env, napi_callback_info args)
 		size_t result;
 		char log_path_name[256];
 		status = napi_get_value_string_utf8(env, argv[0], log_path_name, sizeof(log_path_name), &result);
-		if(status == napi_ok)
+		if (status == napi_ok)
 		{
 			static std::string log_path = "";
-			log_path = std::string( log_path_name );
+			log_path = std::string(log_path_name);
 			logging_start(log_path);
-		} 
-		log_info << "Start game overlay thread command just called "<< std::endl;
+		}
+		log_info << "Start game overlay thread command just called " << std::endl;
 	}
 
 	thread_start_status = start_overlays_thread();
@@ -64,6 +68,11 @@ napi_value Start(napi_env env, napi_callback_info args)
 		if (user_mouse_callback_info == nullptr)
 		{
 			user_mouse_callback_info = new callback_mouse_method_t();
+		}
+
+		if(win_position_callback_info == nullptr)
+		{
+			win_position_callback_info = new callback_win_position_method_t();
 		}
 	}
 
@@ -85,6 +94,13 @@ napi_value Stop(napi_env env, napi_callback_info args)
 		delete user_mouse_callback_info;
 		user_mouse_callback_info = nullptr;
 	}
+
+	if (win_position_callback_info != nullptr)
+	{
+		delete win_position_callback_info;
+		win_position_callback_info = nullptr;
+	}
+
 
 	int thread_stop_status = 0;
 	napi_value ret = nullptr;
@@ -207,7 +223,7 @@ napi_value SwitchToInteractive(napi_env env, napi_callback_info args)
 
 	if (napi_get_value_bool(env, argv[0], &switch_to) != napi_ok)
 		return failed_ret;
-	
+
 	bool check_visibility_for_switch = (!is_overlays_hidden()) && switch_to || (!switch_to);
 
 	if (callback_method_t::get_intercept_active() != switch_to && check_visibility_for_switch)
@@ -234,7 +250,7 @@ napi_value SetKeyboardCallback(napi_env env, napi_callback_info args)
 	{
 		user_keyboard_callback_info->ready = false;
 		napi_delete_reference(env, user_keyboard_callback_info->js_this);
-	}  
+	}
 
 	size_t argc = 1;
 	napi_value argv[1];
@@ -264,6 +280,44 @@ napi_value SetKeyboardCallback(napi_env env, napi_callback_info args)
 	return nullptr;
 }
 
+
+napi_value SetWindowPosCallback(napi_env env, napi_callback_info args)
+{
+	log_info << "APP: SetWindowPosCallback " << std::endl;
+	if (win_position_callback_info->ready)
+	{
+		win_position_callback_info->ready = false;
+		napi_delete_reference(env, win_position_callback_info->js_this);
+	}
+
+	size_t argc = 1;
+	napi_value argv[1];
+	napi_value js_this;
+	napi_value js_callback;
+	napi_valuetype is_function = napi_undefined;
+
+	if (napi_get_cb_info(env, args, &argc, argv, &js_this, 0) != napi_ok)
+		return failed_ret;
+
+	//check if js side of callback is valid
+	if (napi_get_prototype(env, argv[0], &js_callback) != napi_ok)
+		return failed_ret;
+
+	if (napi_typeof(env, js_callback, &is_function) != napi_ok)
+		return failed_ret;
+
+	if (is_function == napi_function)
+	{
+		//save reference and go to creating threadsafe function
+		if (napi_create_reference(env, argv[0], 1, &win_position_callback_info->js_this) != napi_ok)
+			return failed_ret;
+
+		win_position_callback_info->callback_init(env, args, "func_window_pos");
+	}
+
+	return nullptr;
+}
+
 napi_value SetMouseCallback(napi_env env, napi_callback_info args)
 {
 	log_info << "APP: SetMouseCallback " << std::endl;
@@ -271,7 +325,7 @@ napi_value SetMouseCallback(napi_env env, napi_callback_info args)
 	{
 		user_mouse_callback_info->ready = false;
 		napi_delete_reference(env, user_mouse_callback_info->js_this);
-	}  
+	}
 
 	size_t argc = 1;
 	napi_value argv[1];
@@ -342,7 +396,7 @@ napi_value GetOverlayInfo(napi_env env, napi_callback_info args)
 		napi_value overlay_status_value;
 		if (napi_create_string_utf8(env, overlay_status.c_str(), overlay_status.size(), &overlay_status_value) == napi_ok)
 			if (napi_set_named_property(env, ret, "status", overlay_status_value) != napi_ok)
-			return failed_ret;
+				return failed_ret;
 
 		return ret;
 	}
@@ -399,7 +453,7 @@ napi_value SetOverlayPosition(napi_env env, napi_callback_info args)
 
 		if (napi_get_value_int32(env, argv[4], &height) != napi_ok)
 			return failed_ret;
-		
+
 		log_info << "APP: SetOverlayPosition " << id << ", size " << width << "x" << height << " at [" << x << ", " << y << "] " << std::endl;
 
 		position_set_result = set_overlay_position(id, x, y, width, height);
@@ -433,11 +487,10 @@ napi_value PaintOverlay(napi_env env, napi_callback_info args)
 			return failed_ret;
 		if (napi_get_value_int32(env, argv[2], &height) != napi_ok)
 			return failed_ret;
-		
 
-		overlay_frame_js * for_caching_js = new overlay_frame_js(env, argv[3]);
+		overlay_frame_js* for_caching_js = new overlay_frame_js(env, argv[3]);
 		std::shared_ptr<overlay_frame> for_caching = std::make_shared<overlay_frame>(for_caching_js);
-		
+
 		painted = paint_overlay_cached_buffer(overlay_id, for_caching, width, height);
 	}
 
@@ -533,14 +586,14 @@ napi_value SetOverlayAutohide(napi_env env, napi_callback_info args)
 
 		if (napi_get_value_int32(env, argv[1], &autohide_timeout) != napi_ok)
 			return failed_ret;
-		
-		if( argc == 3 )
+
+		if (argc == 3)
 		{
 			if (napi_get_value_int32(env, argv[2], &autohide_transparency) != napi_ok)
 				return failed_ret;
 		}
 
-		log_info << "APP: SetOverlayAutohide " << autohide_timeout  << ", " << autohide_transparency << std::endl;
+		log_info << "APP: SetOverlayAutohide " << autohide_timeout << ", " << autohide_transparency << std::endl;
 		set_autohide_result = set_overlay_autohide(overlay_id, autohide_timeout, autohide_transparency);
 	}
 
@@ -613,7 +666,7 @@ napi_value init(napi_env env, napi_value exports)
 		return failed_ret;
 	if (napi_set_named_property(env, exports, "setTransparency", fn) != napi_ok)
 		return failed_ret;
-	
+
 	if (napi_create_function(env, nullptr, 0, SetOverlayVisibility, nullptr, &fn) != napi_ok)
 		return failed_ret;
 	if (napi_set_named_property(env, exports, "setVisibility", fn) != napi_ok)
@@ -642,6 +695,11 @@ napi_value init(napi_env env, napi_value exports)
 	if (napi_create_function(env, nullptr, 0, SetMouseCallback, nullptr, &fn) != napi_ok)
 		return failed_ret;
 	if (napi_set_named_property(env, exports, "setMouseCallback", fn) != napi_ok)
+		return failed_ret;
+
+	if (napi_create_function(env, nullptr, 0, SetWindowPosCallback, nullptr, &fn) != napi_ok)
+		return failed_ret;
+	if (napi_set_named_property(env, exports, "setWindowPosCallback", fn) != napi_ok)
 		return failed_ret;
 
 	return exports;

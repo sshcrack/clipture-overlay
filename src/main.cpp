@@ -26,7 +26,7 @@ std::shared_ptr<smg_settings> app_settings;
 
 HANDLE overlays_thread = nullptr;
 DWORD overlays_thread_id = 0;
-sl_overlay_thread_state thread_state = sl_overlay_thread_state::destoyed;
+sl_overlay_thread_state thread_state = sl_overlay_thread_state::destroyed;
 std::mutex thread_state_mutex;
 
 UINT_PTR OVERLAY_UPDATE_TIMER = 0;
@@ -50,7 +50,7 @@ DWORD WINAPI overlay_thread_func(void* data)
 		OVERLAY_UPDATE_TIMER = SetTimer(0, 0, app_settings->redraw_timeout, (TIMERPROC) nullptr);
 
 		thread_state_mutex.lock();
-		thread_state = sl_overlay_thread_state::runing;
+		thread_state = sl_overlay_thread_state::running;
 		thread_state_mutex.unlock();
 
 		// Main message loop
@@ -182,7 +182,7 @@ DWORD WINAPI overlay_thread_func(void* data)
 
 	overlays_thread = nullptr;
 	overlays_thread_id = 0;
-	thread_state = sl_overlay_thread_state::destoyed;
+	thread_state = sl_overlay_thread_state::destroyed;
 
 	thread_state_mutex.unlock();
 

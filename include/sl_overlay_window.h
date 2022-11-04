@@ -35,11 +35,30 @@ class overlay_window
 	overlay_window();
 
 	public:
+	bool window_pos_listening = false;
+
+	int (*callback_window_pos_ptr)(HWND, RECT);
+
 	RECT get_rect();
 	bool set_rect(RECT& new_rect);
 	bool apply_new_rect(RECT& new_rect);
 	bool set_new_position(int x, int y);
 	bool apply_size_from_orig();
+
+	HWINEVENTHOOK winPosHook;
+	void win_event_proc(
+		HWINEVENTHOOK hook,
+		DWORD event,
+		HWND hwnd,
+		LONG idObject,
+		LONG idChild,
+		DWORD idEventThread,
+		DWORD time
+  	);
+	bool hook_win_pos();
+	bool unhook_win_pos();
+
+	int WINAPI use_callback_for_window_pos(HWND hwndParam, RECT reactParam);
 
 	bool create_window();
 	bool ready_to_create_overlay();

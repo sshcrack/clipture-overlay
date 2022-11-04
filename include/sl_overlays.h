@@ -53,6 +53,9 @@ class smg_overlays
 	void hook_user_input();
 	void unhook_user_input();
 
+	void hook_window_pos();
+	void unhook_window_pos();
+
 	//commands
 	bool process_commands(MSG& msg);
 

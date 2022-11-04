@@ -1,0 +1,37 @@
+INF:20221104:150420.597: Start game overlay thread command just called 
+INF:20221104:150420.598: APP: start overlays 
+INF:20221104:150420.649: APP: AddOverlayHWND 1
+INF:INF:20221104:150420.649: APP: WM_SLO_HWND_SOURCE_READY 12820221104:150420.649
+: APP: SetOverlayTransparency 100
+INF:20221104:150420.650: APP: SetOverlayPosition 128, size 700x700 at [100, 100] 
+INF:20221104:150420.651: APP: SetMouseCallback 
+INF:20221104:150420.651: APP: user_input_callback_method_init status = 0
+INF:20221104:150420.651: APP: SetKeyboardCallback 
+INF:20221104:150420.651: APP: user_input_callback_method_init status = 0
+DBG:20221104:150420.717: APP: create_window_content_buffer d2d width 508, height 362
+DBG:20221104:150420.718: APP: create_window_content_buffer d2d hr 0
+INF:20221104:150420.719: APP: process_commands id 1
+INF:20221104:150420.719: APP: showup_overlays 
+INF:20221104:150420.721: APP: WM_SLO_OVERLAY_TRANSPARENCY 128, 100
+INF:20221104:150420.721: APP: WM_SLO_OVERLAY_POSITION 128
+DBG:20221104:150420.721: APP: WM_SLO_OVERLAY_POSITION 100 100
+DBG:20221104:150420.721: APP: apply_new_rect 100 to 100
+DBG:20221104:150420.722: APP: create_window_content_buffer d2d width 700, height 700
+DBG:20221104:150420.724: APP: create_window_content_buffer d2d hr 0
+DBG:20221104:150421.217: APP: Saving image from electron array_size = 1960000, w 700, h 700
+DBG:20221104:150421.663: APP: Saving image from electron array_size = 1960000, w 700, h 700
+DBG:20221104:150421.705: APP: Saving image from electron array_size = 1960000, w 700, h 700
+INF:20221104:150425.657: APP: switch_input 
+INF:INF:20221104:150425.657: APP: SwitchToInteractive 1
+20221104:150425.657: APP: process_commands id 7
+INF:20221104:150425.657: APP: hook_user_input 
+DBG:20221104:150425.657: APP: hook_user_input catch window - log.log - clipture-overlay - Visual Studio Code
+INF:20221104:150425.657: APP: Input hooked
+INF:20221104:150425.657: APP: showup_overlays 
+INF:20221104:150425.657: APP: apply_interactive_mode_view 
+INF:20221104:150425.758: APP: LowLevelMouseProc 514, 1339, 340, 0
+INF:20221104:150425.758: APP: switch_input 
+INF:20221104:150425.758: APP: process_commands id 8
+INF:20221104:150425.758: APP: unhook_user_input 
+INF:20221104:150425.758: APP: Input unhooked
+INF:20221104:150425.758: APP: apply_interactive_mode_view 
