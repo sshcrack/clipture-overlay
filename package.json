@@ -9,7 +9,7 @@
     "name": "Streamlabs",
     "url": "https://streamlabs.com"
   },
-  "version": "0.1.40",
+  "version": "0.1.41",
   "license": "SEE LICENSE IN COPYRIGHT LAW",
   "engines": {
     "node": ">= 14"
@@ -23,7 +23,7 @@
     "test": "",
     "configure": "cd build && cmake -A x64  ../ && cd ..",
     "build": "cd build && cmake --build . --config Debug && cd ..",
-    "release": "cd build && cmake --build . --config Release && cd .. && copy build\\Release\\ buildPack\\",
+    "release": "cd build && cmake --build . --config Release && cd .. && copy build\\Release\\ npm\\ && yarn pack && del npm\\game_overlay.*",
     "get-version": "echo %npm_package_version%"
   },
   "prettier": {
