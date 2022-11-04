@@ -10,12 +10,18 @@ let win;
 //
 let test_started = false;
 
+const cppHWNDToBuffer = hwnd => {
+	const buf = Buffer.allocUnsafe(8)
+	buf.writeInt32LE(hwnd)
+	return buf
+}
+
 function createWindow() {
 	test_started = true;
 	console.log('--------------- step_createWindow');
 	console.log('');
 
-	streamlabs_overlays.start();
+	streamlabs_overlays.start("./log.log");
 
 	win = new BrowserWindow({
 		show: false,
@@ -31,8 +37,8 @@ function createWindow() {
 	win.loadURL(`https://www.google.com/search?q=1`);
 	//win.loadURL(`https://unixpapa.com/js/testkey.html`);  //to test input 
 
-	let hwnd = win.getNativeWindowHandle();
-	console.log(hwnd);
+	let hwnd = cppHWNDToBuffer(1509708)//win.getNativeWindowHandle();
+	console.log(win.getNativeWindowHandle())
 	let overlayid = streamlabs_overlays.addHWND(hwnd);
 
 	streamlabs_overlays.show();
@@ -57,7 +63,7 @@ function createWindow() {
 	streamlabs_overlays.setMouseCallback((eventType, x, y, modifier) => {
 		console.log('get first MouseCallback: ' + eventType + ', ' + x + ', ' + y + ', ' + modifier);
 		return 1;
-	});	
+	});
 
 	streamlabs_overlays.setKeyboardCallback((eventType, keyCodeValue) => {
 		//console.log('get KeyboardCallback: '+ eventType +', '+ keyCodeValue + ', '+ BrowserWindow.getAllWindows[0].getNativeWindowHandle());
@@ -114,7 +120,7 @@ function step_2() {
 	console.log('');
 
 	streamlabs_overlays.switchInteractiveMode(false);
-	setTimeout(step_finish, 5000);
+	//setTimeout(step_finish, 5000);
 }
 
 function step_finish() {

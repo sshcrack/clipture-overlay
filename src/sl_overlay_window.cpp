@@ -237,7 +237,7 @@ bool overlay_window::apply_new_rect(RECT& new_rect)
 
 		log_debug << "APP: apply_new_rect " << new_rect.left << " to " << dpiScaledX << std::endl;
 
-		SetWindowPos(overlay_hwnd, HWND_TOPMOST, dpiScaledX, dpiScaledY, new_rect.right - new_rect.left, new_rect.bottom - new_rect.top, SWP_NOREDRAW);
+		SetWindowPos(overlay_hwnd, HWND_TOP, dpiScaledX, dpiScaledY, new_rect.right - new_rect.left, new_rect.bottom - new_rect.top, SWP_NOREDRAW);
 	}
 
 	return set_rect(new_rect);
@@ -514,13 +514,13 @@ bool overlay_window::create_window()
 	if (overlay_hwnd == nullptr && ready_to_create_overlay())
 	{
 		DWORD const dwStyle = WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN; // no border or title bar
-		DWORD const dwStyleEx = WS_EX_LAYERED | WS_EX_TOPMOST | WS_EX_NOACTIVATE | WS_EX_TRANSPARENT | 0x00000800;
+		DWORD const dwStyleEx = WS_EX_LAYERED | WS_EX_NOACTIVATE | WS_EX_TRANSPARENT | 0x00000800;
 		//| 0x40000000
 		//| 0x80000000
 		//| 0x20000000;
-		// transparent, topmost, with no taskbar
+		// transparent, with no taskbar
 
-		overlay_hwnd = CreateWindowEx(dwStyleEx, g_szWindowClass, NULL, dwStyle, 0, 0, 0, 0, NULL, NULL, GetModuleHandle(NULL), NULL);
+		overlay_hwnd = CreateWindowEx(dwStyleEx, g_szWindowClass, NULL, dwStyle, 0, 0, 0, 0, orig_handle, NULL, GetModuleHandle(NULL), NULL);
 
 		if (overlay_hwnd)
 		{
@@ -532,7 +532,7 @@ bool overlay_window::create_window()
 				set_transparency(app_settings->transparency);
 			}
 
-			SetWindowPos(overlay_hwnd, HWND_TOPMOST, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, SWP_NOREDRAW);
+			SetWindowPos(overlay_hwnd, HWND_TOP, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, SWP_NOREDRAW);
 			return true;
 		}
 	}

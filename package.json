@@ -21,6 +21,9 @@
   "scripts": {
     "pack": "node scripts/pack.js",
     "test": "",
+    "configure": "cd build && cmake -A x64  ../ && cd ..",
+    "build": "cd build && cmake --build . --config Debug && cd ..",
+    "release": "cd build && cmake --build . --config Release && cd ..",
     "get-version": "echo %npm_package_version%"
   },
   "prettier": {
