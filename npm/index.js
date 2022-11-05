@@ -1,5 +1,5 @@
 const path = require('path');
-const bindingPath = path.resolve('./game_overlay.node')
-const binding = require(bindingPath) ?? require(path.join(__dirname, "../buildPack/game_overlay.node"));
+//had to do this for webpack fix
+const binding = require('./game_overlay.node');
 
 module.exports = binding;
