@@ -38,7 +38,7 @@ function createWindow() {
 	win.loadURL(`https://www.google.com/search?q=1`);
 	//win.loadURL(`https://unixpapa.com/js/testkey.html`);  //to test input 
 
-	let hwnd = cppHWNDToBuffer(46010002)//win.getNativeWindowHandle();
+	let hwnd = cppHWNDToBuffer(3672444/*46010002win.getNativeWindowHandle()*/)//;
 	console.log(win.getNativeWindowHandle())
 	let overlayid = streamlabs_overlays.addHWND(hwnd);
 
@@ -61,6 +61,7 @@ function createWindow() {
 		//win.webContents.invalidate();
 	});
 
+	console.log(streamlabs_overlays.getInfo(overlayid))
 	streamlabs_overlays.setMouseCallback((eventType, x, y, modifier) => {
 		console.log('get first MouseCallback: ' + eventType + ', ' + x + ', ' + y + ', ' + modifier);
 		return 1;

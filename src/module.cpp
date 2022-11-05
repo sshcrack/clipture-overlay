@@ -378,29 +378,48 @@ napi_value GetOverlayInfo(napi_env env, napi_callback_info args)
 			return failed_ret;
 
 		RECT overlay_rect = requested_overlay->get_rect();
-
-		if (napi_create_and_set_named_property(env, ret, "id", requested_overlay->id) != napi_ok)
-			return failed_ret;
-
-		if (napi_create_and_set_named_property(env, ret, "width", overlay_rect.right - overlay_rect.left) != napi_ok)
-			return failed_ret;
-
-		if (napi_create_and_set_named_property(env, ret, "height", overlay_rect.bottom - overlay_rect.top) != napi_ok)
-			return failed_ret;
-
-		if (napi_create_and_set_named_property(env, ret, "x", overlay_rect.left) != napi_ok)
-			return failed_ret;
-
-		if (napi_create_and_set_named_property(env, ret, "y", overlay_rect.top) != napi_ok)
-			return failed_ret;
-
-		std::string overlay_status = requested_overlay->get_status();
-		napi_value overlay_status_value;
-		if (napi_create_string_utf8(env, overlay_status.c_str(), overlay_status.size(), &overlay_status_value) == napi_ok)
-			if (napi_set_named_property(env, ret, "status", overlay_status_value) != napi_ok)
+		RECT parent_rect;
+		if (GetWindowRect(requested_overlay->orig_handle, &parent_rect))
+		{
+			if (napi_create_and_set_named_property(env, ret, "parentWidth", parent_rect.right - parent_rect.left) != napi_ok)
 				return failed_ret;
 
-		return ret;
+			if (napi_create_and_set_named_property(env, ret, "parentHeight", parent_rect.bottom - parent_rect.top) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "parentX", parent_rect.left) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "parentY", parent_rect.top) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "id", requested_overlay->id) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "width", overlay_rect.right - overlay_rect.left) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "height", overlay_rect.bottom - overlay_rect.top) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "x", overlay_rect.left) != napi_ok)
+				return failed_ret;
+
+			if (napi_create_and_set_named_property(env, ret, "y", overlay_rect.top) != napi_ok)
+				return failed_ret;
+
+			std::string overlay_status = requested_overlay->get_status();
+			napi_value overlay_status_value;
+			if (napi_create_string_utf8(env, overlay_status.c_str(), overlay_status.size(), &overlay_status_value) == napi_ok)
+				if (napi_set_named_property(env, ret, "status", overlay_status_value) != napi_ok)
+					return failed_ret;
+
+			return ret;
+		} else
+		{
+			log_debug << "Failed get rect";
+			return failed_ret;
+		}
 	}
 
 	return failed_ret;

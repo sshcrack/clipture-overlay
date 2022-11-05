@@ -16,6 +16,15 @@ export type OverlayInfo = {
   y: number;
   /** Status of overlay, "ok" if everything went fine with that overlay */
   status: String;
+
+  /** Width of the parent window */
+  parentWidth: number;
+  /** Height of the parent window */
+  parentHeight: number;
+  /** X of the parent window */
+  parentX: number;
+  /** Y of the parent window */
+  parentY: number
 };
 
 /** Native windows handle (WinAPI), encoded as a Node Buffer **/

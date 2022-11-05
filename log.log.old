@@ -1,35 +1,1259 @@
-INF:20221105:021227.904: Start game overlay thread command just called 
-INF:20221105:021227.905: APP: start overlays 
-INF:20221105:021227.954: APP: AddOverlayHWND 1
-INF:20221105:021227.955: APP: Hook Window Position
-INF:20221105:021227.955: APP: WM_SLO_HWND_SOURCE_READY 128
-INF:20221105:021227.955: APP: SetOverlayColorKey 1
-INF:20221105:021227.957: APP: SetOverlayPosition 128, size 700x700 at [100, 100] 
-INF:20221105:021227.957: APP: SetMouseCallback 
-INF:20221105:021227.957: 000001C8D6880DB0
-INF:20221105:021227.958: APP: user_input_callback_method_init status = 0
-INF:20221105:021227.958: APP: SetWindowPosCallback 
-INF:20221105:021227.958: 000001C8D692D920
-DBG:20221105:021227.958: Is ready win position0end
-DBG:20221105:021227.958: APP: WindowPos get next check 
-DBG:20221105:021227.958: APP: Get Prototype napi
-DBG:20221105:021227.958: APP: Get type
-DBG:20221105:021227.958: APP: Create Reference
-DBG:20221105:021227.958: APP: func_window_pos
-INF:20221105:021227.958: APP: window_pos_callback_method_init status = 0
-DBG:20221105:021227.959: Set win callback
-DBG:20221105:021227.959: Set Callback for position
-INF:20221105:021227.959: APP: SetKeyboardCallback 
-INF:20221105:021227.959: 000001C8D692D720
-INF:20221105:021227.959: APP: user_input_callback_method_init status = 0
-DBG:20221105:021228.243: APP: create_window_content_buffer d2d width 1920, height 1080
-DBG:20221105:021228.244: APP: create_window_content_buffer d2d hr 0
-INF:20221105:021228.254: APP: process_commands id 1
-INF:20221105:021228.254: APP: showup_overlays 
-INF:20221105:021228.305: APP: WM_SLO_OVERLAY_COLOR_KEY 128, 1
-INF:20221105:021228.311: APP: WM_SLO_OVERLAY_POSITION 128
-DBG:20221105:021228.312: APP: WM_SLO_OVERLAY_POSITION 100 100
-DBG:20221105:021228.312: APP: apply_new_rect 100 to 100
-DBG:20221105:021228.359: APP: create_window_content_buffer d2d width 700, height 700
-DBG:20221105:021228.360: APP: create_window_content_buffer d2d hr 0
-DBG:20221105:021228.416: APP: Saving image from electron array_size = 1960000, w 700, h 700
+INF:20221105:043002.516: Start game overlay thread command just called 
+INF:20221105:043002.517: APP: start overlays 
+INF:20221105:043002.560: APP: AddOverlayHWND 1
+INF:20221105:043002.561: APP: Hook Window Position
+INF:20221105:043002.561: APP: WM_SLO_HWND_SOURCE_READY 128INF:
+INF:20221105:043002.561: APP: SetOverlayTransparency 255
+20221105:043002.561: APP: process_commands id 1INF:
+20221105:043002.561INF:: APP: SetOverlayPosition 128, size 700x700 at [100, 10020221105:043002.561] : APP: showup_overlays 
+
+INF:20221105:043002.561: APP: WM_SLO_OVERLAY_TRANSPARENCY 128, 255
+INF:20221105:043002.561: APP: WM_SLO_OVERLAY_POSITION 128
+DBG:20221105:043002.561: APP: WM_SLO_OVERLAY_POSITION 100 100
+INF:20221105:043002.561: APP: GetOverlayInfo look for 128
+DBG:20221105:043002.562: Failed get rectINF:20221105:043002.562: APP: SetMouseCallback 
+INF:20221105:043002.562: 00000213DE65F7F0
+INF:20221105:043002.563: APP: user_input_callback_method_init status = 0
+INF:20221105:043002.563: APP: SetWindowPosCallback 
+INF:20221105:043002.563: 00000213E15A2110
+DBG:20221105:043002.563: Is ready win position0end
+DBG:20221105:043002.563: APP: WindowPos get next check 
+DBG:20221105:043002.563: APP: Get Prototype napi
+DBG:20221105:043002.563: APP: Get type
+DBG:20221105:043002.563: APP: Create Reference
+DBG:20221105:043002.563: APP: func_window_pos
+INF:20221105:043002.563: APP: window_pos_callback_method_init status = 0
+DBG:20221105:043002.563: Set win callback
+DBG:20221105:043002.563: Set Callback for position
+INF:20221105:043002.563: APP: SetKeyboardCallback 
+INF:20221105:043002.563: 00000213E15A1F10
+INF:20221105:043002.563: APP: user_input_callback_method_init status = 0
+DBG:20221105:043002.984: APP: Saving image from electron array_size = 1960000, w 700, h 700
+DBG:20221105:043003.510: APP: Saving image from electron array_size = 1960000, w 700, h 700
+INF:20221105:043007.569: APP: switch_input 
+INF:20221105:043007.570: APP: SwitchToInteractive 1
+INF:20221105:043007.570: APP: process_commands id 7
+INF:20221105:043007.570: APP: hook_user_input 
+INF:20221105:043007.571: APP: Input hooked
+INF:20221105:043007.571: APP: showup_overlays 
+INF:20221105:043007.571: APP: apply_interactive_mode_view 
+INF:20221105:043009.390: APP: LowLevelMouseProc 522, 993, 282, 0
+INF:20221105:043009.503: APP: LowLevelMouseProc 512, 993, 282, 0
+INF:20221105:043009.505: APP: LowLevelMouseProc 512, 993, 282, 0
+INF:20221105:043009.508: APP: LowLevelMouseProc 512, 993, 282, 0
+INF:20221105:043009.511: APP: LowLevelMouseProc 512, 993, 282, 0
+INF:20221105:043009.513: APP: LowLevelMouseProc 512, 992, 282, 0
+INF:20221105:043009.516: APP: LowLevelMouseProc 512, 991, 282, 0
+INF:20221105:043009.517: APP: LowLevelMouseProc 512, 991, 283, 0
+INF:20221105:043009.519: APP: LowLevelMouseProc 512, 990, 283, 0
+INF:20221105:043009.521: APP: LowLevelMouseProc 512, 990, 283, 0
+INF:20221105:043009.524: APP: LowLevelMouseProc 512, 989, 284, 0
+INF:20221105:043009.525: APP: LowLevelMouseProc 512, 989, 285, 0
+INF:20221105:043009.527: APP: LowLevelMouseProc 512, 987, 285, 0
+INF:20221105:043009.530: APP: LowLevelMouseProc 512, 987, 286, 0
+INF:20221105:043009.531: APP: LowLevelMouseProc 512, 985, 287, 0
+INF:20221105:043009.533: APP: LowLevelMouseProc 512, 984, 288, 0
+INF:20221105:043009.536: APP: LowLevelMouseProc 512, 983, 288, 0
+INF:20221105:043009.537: APP: LowLevelMouseProc 512, 981, 290, 0
+INF:20221105:043009.539: APP: LowLevelMouseProc 512, 980, 291, 0
+INF:20221105:043009.541: APP: LowLevelMouseProc 512, 978, 292, 0
+INF:20221105:043009.543: APP: LowLevelMouseProc 512, 975, 293, 0
+INF:20221105:043009.545: APP: LowLevelMouseProc 512, 973, 295, 0
+INF:20221105:043009.547: APP: LowLevelMouseProc 512, 971, 296, 0
+INF:20221105:043009.549: APP: LowLevelMouseProc 512, 969, 298, 0
+INF:20221105:043009.552: APP: LowLevelMouseProc 512, 965, 300, 0
+INF:20221105:043009.553: APP: LowLevelMouseProc 512, 962, 302, 0
+INF:20221105:043009.555: APP: LowLevelMouseProc 512, 959, 304, 0
+INF:20221105:043009.558: APP: LowLevelMouseProc 512, 954, 307, 0
+INF:20221105:043009.560: APP: LowLevelMouseProc 512, 950, 308, 0
+INF:20221105:043009.561: APP: LowLevelMouseProc 512, 944, 311, 0
+INF:20221105:043009.564: APP: LowLevelMouseProc 512, 939, 314, 0
+INF:20221105:043009.566: APP: LowLevelMouseProc 512, 934, 317, 0
+INF:20221105:043009.567: APP: LowLevelMouseProc 512, 927, 320, 0
+INF:20221105:043009.569: APP: LowLevelMouseProc 512, 921, 323, 0
+INF:20221105:043009.571: APP: LowLevelMouseProc 512, 914, 326, 0
+INF:20221105:043009.573: APP: LowLevelMouseProc 512, 908, 329, 0
+INF:20221105:043009.575: APP: LowLevelMouseProc 512, 901, 333, 0
+INF:20221105:043009.577: APP: LowLevelMouseProc 512, 893, 336, 0
+INF:20221105:043009.579: APP: LowLevelMouseProc 512, 886, 339, 0
+INF:20221105:043009.581: APP: LowLevelMouseProc 512, 876, 344, 0
+INF:20221105:043009.583: APP: LowLevelMouseProc 512, 869, 347, 0
+INF:20221105:043009.586: APP: LowLevelMouseProc 512, 859, 351, 0
+INF:20221105:043009.587: APP: LowLevelMouseProc 512, 850, 354, 0
+INF:20221105:043009.589: APP: LowLevelMouseProc 512, 842, 358, 0
+INF:20221105:043009.592: APP: LowLevelMouseProc 512, 832, 363, 0
+INF:20221105:043009.594: APP: LowLevelMouseProc 512, 824, 367, 0
+INF:20221105:043009.596: APP: LowLevelMouseProc 512, 814, 371, 0
+INF:20221105:043009.598: APP: LowLevelMouseProc 512, 804, 376, 0
+INF:20221105:043009.600: APP: LowLevelMouseProc 512, 796, 380, 0
+INF:20221105:043009.600: APP: use_callback_mouse  
+INF:20221105:043009.600: APP: use_callback called
+INF:20221105:043009.601: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.602: APP: LowLevelMouseProc 512, 786, 384, 0
+INF:20221105:043009.602: APP: use_callback_mouse  
+INF:20221105:043009.602: APP: use_callback called
+INF:20221105:043009.602: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.604: APP: LowLevelMouseProc 512, 777, 388, 0
+INF:20221105:043009.604: APP: use_callback_mouse  
+INF:20221105:043009.604: APP: use_callback called
+INF:20221105:043009.605: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.606: APP: LowLevelMouseProc 512, 766, 394, 0
+INF:20221105:043009.606: APP: use_callback_mouse  
+INF:20221105:043009.606: APP: use_callback called
+INF:20221105:043009.607: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.608: APP: LowLevelMouseProc 512, 758, 398, 0
+INF:20221105:043009.608: APP: use_callback_mouse  
+INF:20221105:043009.608: APP: use_callback called
+INF:20221105:043009.609: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.610: APP: LowLevelMouseProc 512, 749, 403, 0
+INF:20221105:043009.610: APP: use_callback_mouse  
+INF:20221105:043009.610: APP: use_callback called
+INF:20221105:043009.611: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.612: APP: LowLevelMouseProc 512, 740, 407, 0
+INF:20221105:043009.612: APP: use_callback_mouse  
+INF:20221105:043009.612: APP: use_callback called
+INF:20221105:043009.614: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.614: APP: LowLevelMouseProc 512, 731, 411, 0
+INF:20221105:043009.614: APP: use_callback_mouse  
+INF:20221105:043009.614: APP: use_callback called
+INF:20221105:043009.616: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.617: APP: LowLevelMouseProc 512, 723, 417, 0
+INF:20221105:043009.617: APP: use_callback_mouse  
+INF:20221105:043009.617: APP: use_callback called
+INF:20221105:043009.618: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.619: APP: LowLevelMouseProc 512, 714, 421, 0
+INF:20221105:043009.619: APP: use_callback_mouse  
+INF:20221105:043009.619: APP: use_callback called
+INF:20221105:043009.620: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.620: APP: LowLevelMouseProc 512, 706, 425, 0
+INF:20221105:043009.621: APP: use_callback_mouse  
+INF:20221105:043009.621: APP: use_callback called
+INF:20221105:043009.621: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.622: APP: LowLevelMouseProc 512, 697, 429, 0
+INF:20221105:043009.622: APP: use_callback_mouse  
+INF:20221105:043009.622: APP: use_callback called
+INF:20221105:043009.622: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.623: APP: LowLevelMouseProc 512, 689, 434, 0
+INF:20221105:043009.624: APP: use_callback_mouse  
+INF:20221105:043009.624: APP: use_callback called
+INF:20221105:043009.624: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.626: APP: LowLevelMouseProc 512, 680, 439, 0
+INF:20221105:043009.626: APP: use_callback_mouse  
+INF:20221105:043009.626: APP: use_callback called
+INF:20221105:043009.627: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.628: APP: LowLevelMouseProc 512, 673, 443, 0
+INF:20221105:043009.628: APP: use_callback_mouse  
+INF:20221105:043009.628: APP: use_callback called
+INF:20221105:043009.628: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.630: APP: LowLevelMouseProc 512, 664, 447, 0
+INF:20221105:043009.630: APP: use_callback_mouse  
+INF:20221105:043009.630: APP: use_callback called
+INF:20221105:043009.631: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.632: APP: LowLevelMouseProc 512, 656, 452, 0
+INF:20221105:043009.632: APP: use_callback_mouse  
+INF:20221105:043009.632: APP: use_callback called
+INF:20221105:043009.632: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.634: APP: LowLevelMouseProc 512, 647, 456, 0
+INF:20221105:043009.634: APP: use_callback_mouse  
+INF:20221105:043009.634: APP: use_callback called
+INF:20221105:043009.635: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.636: APP: LowLevelMouseProc 512, 639, 460, 0
+INF:20221105:043009.636: APP: use_callback_mouse  
+INF:20221105:043009.636: APP: use_callback called
+INF:20221105:043009.636: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.637: APP: LowLevelMouseProc 512, 631, 464, 0
+INF:20221105:043009.638: APP: use_callback_mouse  
+INF:20221105:043009.638: APP: use_callback called
+INF:20221105:043009.638: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.639: APP: LowLevelMouseProc 512, 623, 468, 0
+INF:20221105:043009.640: APP: use_callback_mouse  
+INF:20221105:043009.640: APP: use_callback called
+INF:20221105:043009.640: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.642: APP: LowLevelMouseProc 512, 614, 473, 0
+INF:20221105:043009.642: APP: use_callback_mouse  
+INF:20221105:043009.642: APP: use_callback called
+INF:20221105:043009.642: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.643: APP: LowLevelMouseProc 512, 607, 476, 0
+INF:20221105:043009.644: APP: use_callback_mouse  
+INF:20221105:043009.644: APP: use_callback called
+INF:20221105:043009.644: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.646: APP: LowLevelMouseProc 512, 599, 480, 0
+INF:20221105:043009.646: APP: use_callback_mouse  
+INF:20221105:043009.646: APP: use_callback called
+INF:20221105:043009.646: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.648: APP: LowLevelMouseProc 512, 590, 483, 0
+INF:20221105:043009.648: APP: use_callback_mouse  
+INF:20221105:043009.648: APP: use_callback called
+INF:20221105:043009.648: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.649: APP: LowLevelMouseProc 512, 583, 487, 0
+INF:20221105:043009.650: APP: use_callback_mouse  
+INF:20221105:043009.650: APP: use_callback called
+INF:20221105:043009.650: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.651: APP: LowLevelMouseProc 512, 575, 490, 0
+INF:20221105:043009.652: APP: use_callback_mouse  
+INF:20221105:043009.652: APP: use_callback called
+INF:20221105:043009.652: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.654: APP: LowLevelMouseProc 512, 566, 494, 0
+INF:20221105:043009.654: APP: use_callback_mouse  
+INF:20221105:043009.654: APP: use_callback called
+INF:20221105:043009.654: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.656: APP: LowLevelMouseProc 512, 558, 498, 0
+INF:20221105:043009.656: APP: use_callback_mouse  
+INF:20221105:043009.656: APP: use_callback called
+INF:20221105:043009.656: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.657: APP: LowLevelMouseProc 512, 551, 501, 0
+INF:20221105:043009.658: APP: use_callback_mouse  
+INF:20221105:043009.658: APP: use_callback called
+INF:20221105:043009.658: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.660: APP: LowLevelMouseProc 512, 544, 503, 0
+INF:20221105:043009.660: APP: use_callback_mouse  
+INF:20221105:043009.660: APP: use_callback called
+INF:20221105:043009.660: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.662: APP: LowLevelMouseProc 512, 534, 507, 0
+INF:20221105:043009.662: APP: use_callback_mouse  
+INF:20221105:043009.662: APP: use_callback called
+INF:20221105:043009.662: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.664: APP: LowLevelMouseProc 512, 527, 509, 0
+INF:20221105:043009.664: APP: use_callback_mouse  
+INF:20221105:043009.664: APP: use_callback called
+INF:20221105:043009.664: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.666: APP: LowLevelMouseProc 512, 518, 512, 0
+INF:20221105:043009.666: APP: use_callback_mouse  
+INF:20221105:043009.666: APP: use_callback called
+INF:20221105:043009.666: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.667: APP: LowLevelMouseProc 512, 511, 514, 0
+INF:20221105:043009.668: APP: use_callback_mouse  
+INF:20221105:043009.668: APP: use_callback called
+INF:20221105:043009.668: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.669: APP: LowLevelMouseProc 512, 504, 517, 0
+INF:20221105:043009.670: APP: use_callback_mouse  
+INF:20221105:043009.670: APP: use_callback called
+INF:20221105:043009.670: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.671: APP: LowLevelMouseProc 512, 497, 521, 0
+INF:20221105:043009.672: APP: use_callback_mouse  
+INF:20221105:043009.672: APP: use_callback called
+INF:20221105:043009.672: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.673: APP: LowLevelMouseProc 512, 490, 523, 0
+INF:20221105:043009.674: APP: use_callback_mouse  
+INF:20221105:043009.674: APP: use_callback called
+INF:20221105:043009.674: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.676: APP: LowLevelMouseProc 512, 483, 526, 0
+INF:20221105:043009.676: APP: use_callback_mouse  
+INF:20221105:043009.676: APP: use_callback called
+INF:20221105:043009.676: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.678: APP: LowLevelMouseProc 512, 477, 527, 0
+INF:20221105:043009.678: APP: use_callback_mouse  
+INF:20221105:043009.678: APP: use_callback called
+INF:20221105:043009.678: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.679: APP: LowLevelMouseProc 512, 469, 531, 0
+INF:20221105:043009.679: APP: use_callback_mouse  
+INF:20221105:043009.680: APP: use_callback called
+INF:20221105:043009.680: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.682: APP: LowLevelMouseProc 512, 463, 533, 0
+INF:20221105:043009.682: APP: use_callback_mouse  
+INF:20221105:043009.682: APP: use_callback called
+INF:20221105:043009.682: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.683: APP: LowLevelMouseProc 512, 457, 534, 0
+INF:20221105:043009.684: APP: use_callback_mouse  
+INF:20221105:043009.684: APP: use_callback called
+INF:20221105:043009.684: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.685: APP: LowLevelMouseProc 512, 450, 536, 0
+INF:20221105:043009.686: APP: use_callback_mouse  
+INF:20221105:043009.686: APP: use_callback called
+INF:20221105:043009.686: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.687: APP: LowLevelMouseProc 512, 445, 538, 0
+INF:20221105:043009.688: APP: use_callback_mouse  
+INF:20221105:043009.688: APP: use_callback called
+INF:20221105:043009.688: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.690: APP: LowLevelMouseProc 512, 438, 540, 0
+INF:20221105:043009.690: APP: use_callback_mouse  
+INF:20221105:043009.690: APP: use_callback called
+INF:20221105:043009.690: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.692: APP: LowLevelMouseProc 512, 433, 542, 0
+INF:20221105:043009.692: APP: use_callback_mouse  
+INF:20221105:043009.692: APP: use_callback called
+INF:20221105:043009.692: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.693: APP: LowLevelMouseProc 512, 427, 544, 0
+INF:20221105:043009.694: APP: use_callback_mouse  
+INF:20221105:043009.694: APP: use_callback called
+INF:20221105:043009.694: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.696: APP: LowLevelMouseProc 512, 421, 546, 0
+INF:20221105:043009.696: APP: use_callback_mouse  
+INF:20221105:043009.696: APP: use_callback called
+INF:20221105:043009.696: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.698: APP: LowLevelMouseProc 512, 416, 547, 0
+INF:20221105:043009.698: APP: use_callback_mouse  
+INF:20221105:043009.698: APP: use_callback called
+INF:20221105:043009.698: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.699: APP: LowLevelMouseProc 512, 410, 549, 0
+INF:20221105:043009.700: APP: use_callback_mouse  
+INF:20221105:043009.700: APP: use_callback called
+INF:20221105:043009.700: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.701: APP: LowLevelMouseProc 512, 406, 551, 0
+INF:20221105:043009.702: APP: use_callback_mouse  
+INF:20221105:043009.702: APP: use_callback called
+INF:20221105:043009.702: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.703: APP: LowLevelMouseProc 512, 401, 553, 0
+INF:20221105:043009.704: APP: use_callback_mouse  
+INF:20221105:043009.704: APP: use_callback called
+INF:20221105:043009.704: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.706: APP: LowLevelMouseProc 512, 395, 553, 0
+INF:20221105:043009.706: APP: use_callback_mouse  
+INF:20221105:043009.706: APP: use_callback called
+INF:20221105:043009.707: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.708: APP: LowLevelMouseProc 512, 391, 555, 0
+INF:20221105:043009.708: APP: use_callback_mouse  
+INF:20221105:043009.708: APP: use_callback called
+INF:20221105:043009.709: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.710: APP: LowLevelMouseProc 512, 386, 557, 0
+INF:20221105:043009.710: APP: use_callback_mouse  
+INF:20221105:043009.710: APP: use_callback called
+INF:20221105:043009.710: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.712: APP: LowLevelMouseProc 512, 382, 558, 0
+INF:20221105:043009.712: APP: use_callback_mouse  
+INF:20221105:043009.712: APP: use_callback called
+INF:20221105:043009.712: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.714: APP: LowLevelMouseProc 512, 379, 560, 0
+INF:20221105:043009.714: APP: use_callback_mouse  
+INF:20221105:043009.714: APP: use_callback called
+INF:20221105:043009.714: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.716: APP: LowLevelMouseProc 512, 374, 560, 0
+INF:20221105:043009.716: APP: use_callback_mouse  
+INF:20221105:043009.716: APP: use_callback called
+INF:20221105:043009.716: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.718: APP: LowLevelMouseProc 512, 371, 562, 0
+INF:20221105:043009.718: APP: use_callback_mouse  
+INF:20221105:043009.718: APP: use_callback called
+INF:20221105:043009.718: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.720: APP: LowLevelMouseProc 512, 368, 563, 0
+INF:20221105:043009.720: APP: use_callback_mouse  
+INF:20221105:043009.720: APP: use_callback called
+INF:20221105:043009.721: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.722: APP: LowLevelMouseProc 512, 365, 565, 0
+INF:20221105:043009.722: APP: use_callback_mouse  
+INF:20221105:043009.722: APP: use_callback called
+INF:20221105:043009.723: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.724: APP: LowLevelMouseProc 512, 362, 565, 0
+INF:20221105:043009.724: APP: use_callback_mouse  
+INF:20221105:043009.724: APP: use_callback called
+INF:20221105:043009.726: APP: LowLevelMouseProc 512, 358, 567, 0
+INF:INF:20221105:043009.726: APP: use_callback_mouse  
+20221105:043009.726INF:: APP: callback_mouse_method_t::set_callback_args_values
+20221105:043009.726: APP: use_callback called
+INF:20221105:043009.727: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.728: APP: LowLevelMouseProc 512, 356, 568, 0
+INF:20221105:043009.728: APP: use_callback_mouse  
+INF:20221105:043009.728: APP: use_callback called
+INF:INF:20221105:043009.73020221105:043009.730: : APP: LowLevelMouseProc APP: callback_mouse_method_t::set_callback_args_values512
+, 354, 569, 0
+INF:20221105:043009.730: APP: use_callback_mouse  
+INF:20221105:043009.730: APP: use_callback called
+INF:20221105:043009.731: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.732: APP: LowLevelMouseProc 512, 352, 570, 0
+INF:20221105:043009.732: APP: use_callback_mouse  
+INF:20221105:043009.732: APP: use_callback called
+INF:20221105:043009.736: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.738: APP: LowLevelMouseProc 512, 347, 572, 0
+INF:20221105:043009.738: APP: use_callback_mouse  
+INF:20221105:043009.738: APP: use_callback called
+INF:20221105:043009.747: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.752: APP: LowLevelMouseProc 512, 336, 581, 0
+INF:20221105:043009.753: APP: use_callback_mouse  
+INF:20221105:043009.753: APP: use_callback called
+INF:20221105:043009.760: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.762: APP: LowLevelMouseProc 512, 332, 586, 0
+INF:20221105:043009.762: APP: use_callback_mouse  
+INF:20221105:043009.762: APP: use_callback called
+INF:20221105:043009.764: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.769: APP: LowLevelMouseProc 512, 329, 590, 0
+INF:20221105:043009.769: APP: use_callback_mouse  
+INF:20221105:043009.769: APP: use_callback called
+INF:20221105:043009.771: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.772: APP: LowLevelMouseProc 512, 329, 592, 0
+INF:20221105:043009.773: APP: use_callback_mouse  
+INF:20221105:043009.773: APP: use_callback called
+INF:20221105:043009.775: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.776: APP: LowLevelMouseProc 512, 328, 593, 0
+INF:20221105:043009.776: APP: use_callback_mouse  
+INF:20221105:043009.776: APP: use_callback called
+INF:20221105:043009.779: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.780: APP: LowLevelMouseProc 512, 327, 595, 0
+INF:20221105:043009.780: APP: use_callback_mouse  
+INF:20221105:043009.780: APP: use_callback called
+INF:20221105:043009.782: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.783: APP: LowLevelMouseProc 512, 327, 597, 0
+INF:20221105:043009.783: APP: use_callback_mouse  
+INF:20221105:043009.783: APP: use_callback called
+INF:20221105:043009.784: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.786: APP: LowLevelMouseProc 512, 327, 598, 0
+INF:20221105:043009.787: APP: use_callback_mouse  
+INF:20221105:043009.787: APP: use_callback called
+INF:20221105:043009.788: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.790: APP: LowLevelMouseProc 512, 326, 602, 0
+INF:20221105:043009.790: APP: use_callback_mouse  
+INF:20221105:043009.790: APP: use_callback called
+INF:20221105:043009.793: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.794: APP: LowLevelMouseProc 512, 326, 603, 0
+INF:20221105:043009.794: APP: use_callback_mouse  
+INF:20221105:043009.794: APP: use_callback called
+INF:20221105:043009.796: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.797: APP: LowLevelMouseProc 512, 326, 605, 0
+INF:20221105:043009.797: APP: use_callback_mouse  
+INF:20221105:043009.797: APP: use_callback called
+INF:20221105:043009.800: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.803: APP: LowLevelMouseProc 512, 326, 607, 0
+INF:20221105:043009.803: APP: use_callback_mouse  
+INF:20221105:043009.803: APP: use_callback called
+INF:20221105:043009.806: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.808: APP: LowLevelMouseProc 512, 326, 611, 0
+INF:20221105:043009.808: APP: use_callback_mouse  
+INF:20221105:043009.808: APP: use_callback called
+INF:20221105:043009.810: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.811: APP: LowLevelMouseProc 512, 325, 614, 0
+INF:20221105:043009.811: APP: use_callback_mouse  
+INF:20221105:043009.811: APP: use_callback called
+INF:20221105:043009.813: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.814: APP: LowLevelMouseProc 512, 325, 617, 0
+INF:20221105:043009.814: APP: use_callback_mouse  
+INF:20221105:043009.814: APP: use_callback called
+INF:20221105:043009.816: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.817: APP: LowLevelMouseProc 512, 325, 618, 0
+INF:20221105:043009.817: APP: use_callback_mouse  
+INF:20221105:043009.817: APP: use_callback called
+INF:20221105:043009.818: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.820: APP: LowLevelMouseProc 512, 325, 620, 0
+INF:20221105:043009.820: APP: use_callback_mouse  
+INF:20221105:043009.820: APP: use_callback called
+INF:20221105:043009.822: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.823: APP: LowLevelMouseProc 512, 325, 621, 0
+INF:20221105:043009.823: APP: use_callback_mouse  
+INF:20221105:043009.823: APP: use_callback called
+INF:20221105:043009.824: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.826: APP: LowLevelMouseProc 512, 324, 623, 0
+INF:20221105:043009.826: APP: use_callback_mouse  
+INF:20221105:043009.826: APP: use_callback called
+INF:20221105:043009.827: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.829: APP: LowLevelMouseProc 512, 324, 625, 0
+INF:20221105:043009.829: APP: use_callback_mouse  
+INF:20221105:043009.829: APP: use_callback called
+INF:20221105:043009.831: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.833: APP: LowLevelMouseProc 512, 323, 627, 0
+INF:20221105:043009.833: APP: use_callback_mouse  
+INF:20221105:043009.833: APP: use_callback called
+INF:20221105:043009.836: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.838: APP: LowLevelMouseProc 512, 323, 630, 0
+INF:20221105:043009.838: APP: use_callback_mouse  
+INF:20221105:043009.838: APP: use_callback called
+INF:20221105:043009.840: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.842: APP: LowLevelMouseProc 512, 323, 633, 0
+INF:20221105:043009.842: APP: use_callback_mouse  
+INF:20221105:043009.842: APP: use_callback called
+INF:20221105:043009.843: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.845: APP: LowLevelMouseProc 512, 322, 635, 0
+INF:20221105:043009.845: APP: use_callback_mouse  
+INF:20221105:043009.845: APP: use_callback called
+INF:20221105:043009.847: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.848: APP: LowLevelMouseProc 512, 322, 637, 0
+INF:20221105:043009.848: APP: use_callback_mouse  
+INF:20221105:043009.848: APP: use_callback called
+INF:20221105:043009.849: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.852: APP: LowLevelMouseProc 512, 322, 638, 0
+INF:20221105:043009.852: APP: use_callback_mouse  
+INF:20221105:043009.852: APP: use_callback called
+INF:20221105:043009.853: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.853: APP: LowLevelMouseProc 512, 321, 640, 0
+INF:20221105:043009.854: APP: use_callback_mouse  
+INF:20221105:043009.854: APP: use_callback called
+INF:20221105:043009.855: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.856: APP: LowLevelMouseProc 512, 320, 642, 0
+INF:20221105:043009.856: APP: use_callback_mouse  
+INF:20221105:043009.856: APP: use_callback called
+INF:20221105:043009.859: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.859: APP: LowLevelMouseProc 512, 320, 643, 0
+INF:20221105:043009.860: APP: use_callback_mouse  
+INF:20221105:043009.860: APP: use_callback called
+INF:20221105:043009.862: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.863: APP: LowLevelMouseProc 512, 320, 645, 0
+INF:20221105:043009.863: APP: use_callback_mouse  
+INF:20221105:043009.863: APP: use_callback called
+INF:20221105:043009.866: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.868: APP: LowLevelMouseProc 512, 319, 648, 0
+INF:20221105:043009.868: APP: use_callback_mouse  
+INF:20221105:043009.868: APP: use_callback called
+INF:20221105:043009.870: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.872: APP: LowLevelMouseProc 512, 318, 650, 0
+INF:20221105:043009.872: APP: use_callback_mouse  
+INF:20221105:043009.872: APP: use_callback called
+INF:20221105:043009.874: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.874: APP: LowLevelMouseProc 512, 318, 652, 0
+INF:20221105:043009.875: APP: use_callback_mouse  
+INF:20221105:043009.875: APP: use_callback called
+INF:20221105:043009.877: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.878: APP: LowLevelMouseProc 512, 317, 654, 0
+INF:20221105:043009.878: APP: use_callback_mouse  
+INF:20221105:043009.878: APP: use_callback called
+INF:20221105:043009.880: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.882: APP: LowLevelMouseProc 512, 316, 656, 0
+INF:20221105:043009.882: APP: use_callback_mouse  
+INF:20221105:043009.882: APP: use_callback called
+INF:20221105:043009.883: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.884: APP: LowLevelMouseProc 512, 316, 657, 0
+INF:20221105:043009.884: APP: use_callback_mouse  
+INF:20221105:043009.884: APP: use_callback called
+INF:20221105:043009.886: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.886: APP: LowLevelMouseProc 512, 316, 658, 0
+INF:20221105:043009.887: APP: use_callback_mouse  
+INF:20221105:043009.887: APP: use_callback called
+INF:20221105:043009.888: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.889: APP: LowLevelMouseProc 512, 315, 659, 0
+INF:20221105:043009.889: APP: use_callback_mouse  
+INF:20221105:043009.889: APP: use_callback called
+INF:20221105:043009.891: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.892: APP: LowLevelMouseProc 512, 315, 660, 0
+INF:20221105:043009.892: APP: use_callback_mouse  
+INF:20221105:043009.892: APP: use_callback called
+INF:20221105:043009.894: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.895: APP: LowLevelMouseProc 512, 315, 661, 0
+INF:20221105:043009.895: APP: use_callback_mouse  
+INF:20221105:043009.895: APP: use_callback called
+INF:20221105:043009.897: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.898: APP: LowLevelMouseProc 512, 315, 662, 0
+INF:20221105:043009.899: APP: use_callback_mouse  
+INF:20221105:043009.899: APP: use_callback called
+INF:20221105:043009.900: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.901: APP: LowLevelMouseProc 512, 315, 663, 0
+INF:20221105:043009.901: APP: use_callback_mouse  
+INF:20221105:043009.901: APP: use_callback called
+INF:20221105:043009.903: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.903: APP: LowLevelMouseProc 512, 315, 663, 0
+INF:20221105:043009.903: APP: use_callback_mouse  
+INF:20221105:043009.903: APP: use_callback called
+INF:20221105:043009.905: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.906: APP: LowLevelMouseProc 512, 315, 664, 0
+INF:20221105:043009.906: APP: use_callback_mouse  
+INF:20221105:043009.906: APP: use_callback called
+INF:20221105:043009.908: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.910: APP: LowLevelMouseProc 512, 314, 665, 0
+INF:20221105:043009.910: APP: use_callback_mouse  
+INF:20221105:043009.910: APP: use_callback called
+INF:20221105:043009.913: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.914: APP: LowLevelMouseProc 512, 314, 666, 0
+INF:20221105:043009.914: APP: use_callback_mouse  
+INF:20221105:043009.914: APP: use_callback called
+INF:20221105:043009.916: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.919: APP: LowLevelMouseProc 512, 314, 667, 0
+INF:20221105:043009.919: APP: use_callback_mouse  
+INF:20221105:043009.919: APP: use_callback called
+INF:20221105:043009.921: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.927: APP: LowLevelMouseProc 512, 314, 667, 0
+INF:20221105:043009.927: APP: use_callback_mouse  
+INF:20221105:043009.927: APP: use_callback called
+INF:20221105:043009.927: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.934: APP: LowLevelMouseProc 512, 314, 667, 0
+INF:20221105:043009.934: APP: use_callback_mouse  
+INF:20221105:043009.934: APP: use_callback called
+INF:20221105:043009.935: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.938: APP: LowLevelMouseProc 512, 314, 668, 0
+INF:20221105:043009.938: APP: use_callback_mouse  
+INF:20221105:043009.938: APP: use_callback called
+INF:20221105:043009.940: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.941: APP: LowLevelMouseProc 512, 314, 668, 0
+INF:20221105:043009.941: APP: use_callback_mouse  
+INF:20221105:043009.941: APP: use_callback called
+INF:20221105:043009.943: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.946: APP: LowLevelMouseProc 512, 315, 668, 0
+INF:20221105:043009.946: APP: use_callback_mouse  
+INF:20221105:043009.946: APP: use_callback called
+INF:20221105:043009.946: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.948: APP: LowLevelMouseProc 512, 315, 668, 0
+INF:20221105:043009.948: APP: use_callback_mouse  
+INF:20221105:043009.948: APP: use_callback called
+INF:20221105:043009.949: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.950: APP: LowLevelMouseProc 512, 315, 668, 0
+INF:20221105:043009.950: APP: use_callback_mouse  
+INF:20221105:043009.950: APP: use_callback called
+INF:20221105:043009.950: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.952: APP: LowLevelMouseProc 512, 316, 668, 0
+INF:20221105:043009.952: APP: use_callback_mouse  
+INF:20221105:043009.952: APP: use_callback called
+INF:20221105:043009.953: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.955: APP: LowLevelMouseProc 512, 316, 668, 0
+INF:20221105:043009.955: APP: use_callback_mouse  
+INF:20221105:043009.955: APP: use_callback called
+INF:20221105:043009.957: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.957: APP: LowLevelMouseProc 512, 316, 669, 0
+INF:20221105:043009.957: APP: use_callback_mouse  
+INF:20221105:043009.957: APP: use_callback called
+INF:20221105:043009.958: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.959: APP: LowLevelMouseProc 512, 317, 669, 0
+INF:20221105:043009.959: APP: use_callback_mouse  
+INF:20221105:043009.959: APP: use_callback called
+INF:20221105:043009.960: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.962: APP: LowLevelMouseProc 512, 318, 669, 0
+INF:20221105:043009.962: APP: use_callback_mouse  
+INF:20221105:043009.962: APP: use_callback called
+INF:20221105:043009.965: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.966: APP: LowLevelMouseProc 512, 319, 669, 0
+INF:20221105:043009.966: APP: use_callback_mouse  
+INF:20221105:043009.966: APP: use_callback called
+INF:20221105:043009.969: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.970: APP: LowLevelMouseProc 512, 320, 670, 0
+INF:20221105:043009.970: APP: use_callback_mouse  
+INF:20221105:043009.971: APP: use_callback called
+INF:20221105:043009.972: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.973: APP: LowLevelMouseProc 512, 322, 670, 0
+INF:20221105:043009.974: APP: use_callback_mouse  
+INF:20221105:043009.974: APP: use_callback called
+INF:20221105:043009.975: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.976: APP: LowLevelMouseProc 512, 323, 671, 0
+INF:20221105:043009.976: APP: use_callback_mouse  
+INF:20221105:043009.976: APP: use_callback called
+INF:20221105:043009.978: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.979: APP: LowLevelMouseProc 512, 324, 671, 0
+INF:20221105:043009.979: APP: use_callback_mouse  
+INF:20221105:043009.979: APP: use_callback called
+INF:20221105:043009.980: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.982: APP: LowLevelMouseProc 512, 327, 671, 0
+INF:20221105:043009.982: APP: use_callback_mouse  
+INF:20221105:043009.982: APP: use_callback called
+INF:20221105:043009.983: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.983: APP: LowLevelMouseProc 512, 328, 671, 0
+INF:20221105:043009.983: APP: use_callback_mouse  
+INF:20221105:043009.983: APP: use_callback called
+INF:20221105:043009.985: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.986: APP: LowLevelMouseProc 512, 329, 672, 0
+INF:20221105:043009.986: APP: use_callback_mouse  
+INF:20221105:043009.986: APP: use_callback called
+INF:20221105:043009.986: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.988: APP: LowLevelMouseProc 512, 330, 672, 0
+INF:20221105:043009.988: APP: use_callback_mouse  
+INF:20221105:043009.989: APP: use_callback called
+INF:20221105:043009.990: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.991: APP: LowLevelMouseProc 512, 331, 672, 0
+INF:20221105:043009.991: APP: use_callback_mouse  
+INF:20221105:043009.991: APP: use_callback called
+INF:20221105:043009.992: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.993: APP: LowLevelMouseProc 512, 332, 672, 0
+INF:20221105:043009.993: APP: use_callback_mouse  
+INF:20221105:043009.993: APP: use_callback called
+INF:20221105:043009.994: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.995: APP: LowLevelMouseProc 512, 334, 672, 0
+INF:20221105:043009.995: APP: use_callback_mouse  
+INF:20221105:043009.995: APP: use_callback called
+INF:20221105:043009.997: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.998: APP: LowLevelMouseProc 512, 337, 673, 0
+INF:20221105:043009.998: APP: use_callback_mouse  
+INF:20221105:043009.998: APP: use_callback called
+INF:20221105:043009.998: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043009.999: APP: LowLevelMouseProc 512, 339, 673, 0
+INF:20221105:043009.999: APP: use_callback_mouse  
+INF:20221105:043009.999: APP: use_callback called
+INF:20221105:043010.001: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.002: APP: LowLevelMouseProc 512, 341, 674, 0
+INF:20221105:043010.002: APP: use_callback_mouse  
+INF:20221105:043010.002: APP: use_callback called
+INF:20221105:043010.003: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.004: APP: LowLevelMouseProc 512, 343, 674, 0
+INF:20221105:043010.004: APP: use_callback_mouse  
+INF:20221105:043010.004: APP: use_callback called
+INF:20221105:043010.006: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.007: APP: LowLevelMouseProc 512, 344, 674, 0
+INF:20221105:043010.007: APP: use_callback_mouse  
+INF:20221105:043010.007: APP: use_callback called
+INF:20221105:043010.007: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.008: APP: LowLevelMouseProc 512, 346, 675, 0
+INF:20221105:043010.008: APP: use_callback_mouse  
+INF:20221105:043010.008: APP: use_callback called
+INF:20221105:043010.010: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.011: APP: LowLevelMouseProc 512, 350, 675, 0
+INF:20221105:043010.011: APP: use_callback_mouse  
+INF:20221105:043010.011: APP: use_callback called
+INF:20221105:043010.012: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.013: APP: LowLevelMouseProc 512, 352, 675, 0
+INF:20221105:043010.013: APP: use_callback_mouse  
+INF:20221105:043010.013: APP: use_callback called
+INF:20221105:043010.016: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.017: APP: LowLevelMouseProc 512, 355, 676, 0
+INF:20221105:043010.017: APP: use_callback_mouse  
+INF:20221105:043010.017: APP: use_callback called
+INF:20221105:043010.019: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.022: APP: LowLevelMouseProc 512, 358, 676, 0
+INF:20221105:043010.022: APP: use_callback_mouse  
+INF:20221105:043010.022: APP: use_callback called
+INF:20221105:043010.026: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.028: APP: LowLevelMouseProc 512, 367, 677, 0
+INF:20221105:043010.028: APP: use_callback_mouse  
+INF:20221105:043010.028: APP: use_callback called
+INF:20221105:043010.032: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.034: APP: LowLevelMouseProc 512, 374, 678, 0
+INF:20221105:043010.034: APP: use_callback_mouse  
+INF:20221105:043010.034: APP: use_callback called
+INF:20221105:043010.036: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.040: APP: LowLevelMouseProc 512, 382, 679, 0
+INF:20221105:043010.040: APP: use_callback_mouse  
+INF:20221105:043010.040: APP: use_callback called
+INF:20221105:043010.047: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.048: APP: LowLevelMouseProc 512, 393, 680, 0
+INF:20221105:043010.049: APP: use_callback_mouse  
+INF:20221105:043010.049: APP: use_callback called
+INF:20221105:043010.052: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.055: APP: LowLevelMouseProc 512, 400, 680, 0
+INF:20221105:043010.055: APP: use_callback_mouse  
+INF:20221105:043010.055: APP: use_callback called
+INF:20221105:043010.060: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.062: APP: LowLevelMouseProc 512, 411, 682, 0
+INF:20221105:043010.063: APP: use_callback_mouse  
+INF:20221105:043010.063: APP: use_callback called
+INF:20221105:043010.067: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.070: APP: LowLevelMouseProc 512, 423, 684, 0
+INF:20221105:043010.070: APP: use_callback_mouse  
+INF:20221105:043010.070: APP: use_callback called
+INF:20221105:043010.073: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.074: APP: LowLevelMouseProc 512, 428, 685, 0
+INF:20221105:043010.074: APP: use_callback_mouse  
+INF:20221105:043010.074: APP: use_callback called
+INF:20221105:043010.076: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.078: APP: LowLevelMouseProc 512, 434, 687, 0
+INF:20221105:043010.078: APP: use_callback_mouse  
+INF:20221105:043010.078: APP: use_callback called
+INF:20221105:043010.080: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.080: APP: LowLevelMouseProc 512, 436, 687, 0
+INF:20221105:043010.080: APP: use_callback_mouse  
+INF:20221105:043010.080: APP: use_callback called
+INF:20221105:043010.082: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.082: APP: LowLevelMouseProc 512, 439, 687, 0
+INF:20221105:043010.082: APP: use_callback_mouse  
+INF:20221105:043010.082: APP: use_callback called
+INF:20221105:043010.084: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.085: APP: LowLevelMouseProc 512, 442, 688, 0
+INF:20221105:043010.085: APP: use_callback_mouse  
+INF:20221105:043010.085: APP: use_callback called
+INF:20221105:043010.087: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.087: APP: LowLevelMouseProc 512, 447, 690, 0
+INF:20221105:043010.087: APP: use_callback_mouse  
+INF:20221105:043010.087: APP: use_callback called
+INF:20221105:043010.089: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.090: APP: LowLevelMouseProc 512, 450, 690, 0
+INF:20221105:043010.090: APP: use_callback_mouse  
+INF:20221105:043010.090: APP: use_callback called
+INF:20221105:043010.092: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.093: APP: LowLevelMouseProc 512, 452, 690, 0
+INF:20221105:043010.093: APP: use_callback_mouse  
+INF:20221105:043010.093: APP: use_callback called
+INF:20221105:043010.094: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.096: APP: LowLevelMouseProc 512, 457, 692, 0
+INF:20221105:043010.096: APP: use_callback_mouse  
+INF:20221105:043010.096: APP: use_callback called
+INF:20221105:043010.097: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.099: APP: LowLevelMouseProc 512, 459, 693, 0
+INF:20221105:043010.099: APP: use_callback_mouse  
+INF:20221105:043010.099: APP: use_callback called
+INF:20221105:043010.101: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.101: APP: LowLevelMouseProc 512, 464, 694, 0
+INF:20221105:043010.101: APP: use_callback_mouse  
+INF:20221105:043010.102: APP: use_callback called
+INF:20221105:043010.103: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.104: APP: LowLevelMouseProc 512, 466, 695, 0
+INF:20221105:043010.104: APP: use_callback_mouse  
+INF:20221105:043010.104: APP: use_callback called
+INF:20221105:043010.105: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.106: APP: LowLevelMouseProc 512, 468, 695, 0
+INF:20221105:043010.107: APP: use_callback_mouse  
+INF:20221105:043010.107: APP: use_callback called
+INF:20221105:043010.108: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.110: APP: LowLevelMouseProc 512, 472, 697, 0
+INF:20221105:043010.110: APP: use_callback_mouse  
+INF:20221105:043010.110: APP: use_callback called
+INF:20221105:043010.112: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.113: APP: LowLevelMouseProc 512, 474, 698, 0
+INF:20221105:043010.113: APP: use_callback_mouse  
+INF:20221105:043010.113: APP: use_callback called
+INF:20221105:043010.114: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.115: APP: LowLevelMouseProc 512, 476, 698, 0
+INF:20221105:043010.115: APP: use_callback_mouse  
+INF:20221105:043010.115: APP: use_callback called
+INF:20221105:043010.116: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.117: APP: LowLevelMouseProc 512, 480, 700, 0
+INF:20221105:043010.117: APP: use_callback_mouse  
+INF:20221105:043010.117: APP: use_callback called
+INF:20221105:043010.118: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.120: APP: LowLevelMouseProc 512, 482, 700, 0
+INF:20221105:043010.120: APP: use_callback_mouse  
+INF:20221105:043010.120: APP: use_callback called
+INF:20221105:043010.122: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.123: APP: LowLevelMouseProc 512, 483, 701, 0
+INF:20221105:043010.123: APP: use_callback_mouse  
+INF:20221105:043010.123: APP: use_callback called
+INF:20221105:043010.125: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.126: APP: LowLevelMouseProc 512, 487, 703, 0
+INF:20221105:043010.126: APP: use_callback_mouse  
+INF:20221105:043010.126: APP: use_callback called
+INF:20221105:043010.127: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.128: APP: LowLevelMouseProc 512, 489, 703, 0
+INF:20221105:043010.129: APP: use_callback_mouse  
+INF:20221105:043010.129: APP: use_callback called
+INF:20221105:043010.130: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.130: APP: LowLevelMouseProc 512, 490, 704, 0
+INF:20221105:043010.130: APP: use_callback_mouse  
+INF:20221105:043010.130: APP: use_callback called
+INF:20221105:043010.132: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.133: APP: LowLevelMouseProc 512, 494, 706, 0
+INF:20221105:043010.133: APP: use_callback_mouse  
+INF:20221105:043010.133: APP: use_callback called
+INF:20221105:043010.134: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.136: APP: LowLevelMouseProc 512, 496, 707, 0
+INF:20221105:043010.136: APP: use_callback_mouse  
+INF:20221105:043010.136: APP: use_callback called
+INF:20221105:043010.138: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.140: APP: LowLevelMouseProc 512, 499, 709, 0
+INF:20221105:043010.140: APP: use_callback_mouse  
+INF:20221105:043010.140: APP: use_callback called
+INF:20221105:043010.142: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.144: APP: LowLevelMouseProc 512, 503, 710, 0
+INF:20221105:043010.145: APP: use_callback_mouse  
+INF:20221105:043010.145: APP: use_callback called
+INF:20221105:043010.148: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.149: APP: LowLevelMouseProc 512, 506, 713, 0
+INF:20221105:043010.149: APP: use_callback_mouse  
+INF:20221105:043010.149: APP: use_callback called
+INF:20221105:043010.151: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.153: APP: LowLevelMouseProc 512, 509, 714, 0
+INF:20221105:043010.153: APP: use_callback_mouse  
+INF:20221105:043010.153: APP: use_callback called
+INF:20221105:043010.155: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.157: APP: LowLevelMouseProc 512, 513, 717, 0
+INF:20221105:043010.157: APP: use_callback_mouse  
+INF:20221105:043010.157: APP: use_callback called
+INF:20221105:043010.159: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.160: APP: LowLevelMouseProc 512, 515, 717, 0
+INF:20221105:043010.160: APP: use_callback_mouse  
+INF:20221105:043010.160: APP: use_callback called
+INF:20221105:043010.162: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.163: APP: LowLevelMouseProc 512, 517, 719, 0
+INF:20221105:043010.163: APP: use_callback_mouse  
+INF:20221105:043010.163: APP: use_callback called
+INF:20221105:043010.164: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.166: APP: LowLevelMouseProc 512, 519, 720, 0
+INF:20221105:043010.166: APP: use_callback_mouse  
+INF:20221105:043010.166: APP: use_callback called
+INF:20221105:043010.168: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.169: APP: LowLevelMouseProc 512, 521, 722, 0
+INF:20221105:043010.169: APP: use_callback_mouse  
+INF:20221105:043010.169: APP: use_callback called
+INF:20221105:043010.171: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.172: APP: LowLevelMouseProc 512, 524, 723, 0
+INF:20221105:043010.172: APP: use_callback_mouse  
+INF:20221105:043010.172: APP: use_callback called
+INF:20221105:043010.173: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.175: APP: LowLevelMouseProc 512, 526, 725, 0
+INF:20221105:043010.175: APP: use_callback_mouse  
+INF:20221105:043010.175: APP: use_callback called
+INF:20221105:043010.177: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.178: APP: LowLevelMouseProc 512, 528, 726, 0
+INF:20221105:043010.178: APP: use_callback_mouse  
+INF:20221105:043010.178: APP: use_callback called
+INF:20221105:043010.179: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.180: APP: LowLevelMouseProc 512, 529, 727, 0
+INF:20221105:043010.180: APP: use_callback_mouse  
+INF:20221105:043010.180: APP: use_callback called
+INF:20221105:043010.181: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.183: APP: LowLevelMouseProc 512, 531, 728, 0
+INF:20221105:043010.183: APP: use_callback_mouse  
+INF:20221105:043010.183: APP: use_callback called
+INF:20221105:043010.184: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.185: APP: LowLevelMouseProc 512, 532, 729, 0
+INF:20221105:043010.185: APP: use_callback_mouse  
+INF:20221105:043010.185: APP: use_callback called
+INF:20221105:043010.186: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.187: APP: LowLevelMouseProc 512, 535, 731, 0
+INF:20221105:043010.188: APP: use_callback_mouse  
+INF:20221105:043010.188: APP: use_callback called
+INF:20221105:043010.189: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.190: APP: LowLevelMouseProc 512, 535, 731, 0
+INF:20221105:043010.190: APP: use_callback_mouse  
+INF:20221105:043010.190: APP: use_callback called
+INF:20221105:043010.191: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.192: APP: LowLevelMouseProc 512, 537, 733, 0
+INF:20221105:043010.192: APP: use_callback_mouse  
+INF:20221105:043010.192: APP: use_callback called
+INF:20221105:043010.193: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.193: APP: LowLevelMouseProc 512, 538, 733, 0
+INF:20221105:043010.193: APP: use_callback_mouse  
+INF:20221105:043010.194: APP: use_callback called
+INF:20221105:043010.194: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.195: APP: LowLevelMouseProc 512, 539, 734, 0
+INF:20221105:043010.196: APP: use_callback_mouse  
+INF:20221105:043010.196: APP: use_callback called
+INF:20221105:043010.198: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.198: APP: LowLevelMouseProc 512, 541, 735, 0
+INF:20221105:043010.198: APP: use_callback_mouse  
+INF:20221105:043010.198: APP: use_callback called
+INF:20221105:043010.199: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.200: APP: LowLevelMouseProc 512, 541, 736, 0
+INF:20221105:043010.200: APP: use_callback_mouse  
+INF:20221105:043010.200: APP: use_callback called
+INF:20221105:043010.201: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.202: APP: LowLevelMouseProc 512, 543, 737, 0
+INF:20221105:043010.202: APP: use_callback_mouse  
+INF:20221105:043010.202: APP: use_callback called
+INF:20221105:043010.204: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.204: APP: LowLevelMouseProc 512, 544, 737, 0
+INF:20221105:043010.204: APP: use_callback_mouse  
+INF:20221105:043010.204: APP: use_callback called
+INF:20221105:043010.204: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.206: APP: LowLevelMouseProc 512, 545, 738, 0
+INF:20221105:043010.206: APP: use_callback_mouse  
+INF:20221105:043010.206: APP: use_callback called
+INF:20221105:043010.207: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.207: APP: LowLevelMouseProc 512, 546, 739, 0
+INF:20221105:043010.207: APP: use_callback_mouse  
+INF:20221105:043010.207: APP: use_callback called
+INF:20221105:043010.208: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.210: APP: LowLevelMouseProc 512, 547, 739, 0
+INF:20221105:043010.210: APP: use_callback_mouse  
+INF:20221105:043010.210: APP: use_callback called
+INF:20221105:043010.211: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.211: APP: LowLevelMouseProc 512, 549, 741, 0
+INF:20221105:043010.211: APP: use_callback_mouse  
+INF:20221105:043010.211: APP: use_callback called
+INF:20221105:043010.213: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.213: APP: LowLevelMouseProc 512, 549, 741, 0
+INF:20221105:043010.213: APP: use_callback_mouse  
+INF:20221105:043010.213: APP: use_callback called
+INF:20221105:043010.215: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.215: APP: LowLevelMouseProc 512, 551, 742, 0
+INF:20221105:043010.215: APP: use_callback_mouse  
+INF:20221105:043010.215: APP: use_callback called
+INF:20221105:043010.216: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.218: APP: LowLevelMouseProc 512, 552, 743, 0
+INF:20221105:043010.218: APP: use_callback_mouse  
+INF:20221105:043010.219: APP: use_callback called
+INF:20221105:043010.220: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.221: APP: LowLevelMouseProc 512, 552, 743, 0
+INF:20221105:043010.221: APP: use_callback_mouse  
+INF:20221105:043010.221: APP: use_callback called
+INF:20221105:043010.222: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.223: APP: LowLevelMouseProc 512, 555, 744, 0
+INF:20221105:043010.223: APP: use_callback_mouse  
+INF:20221105:043010.223: APP: use_callback called
+INF:20221105:043010.224: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.225: APP: LowLevelMouseProc 512, 556, 745, 0
+INF:20221105:043010.225: APP: use_callback_mouse  
+INF:20221105:043010.225: APP: use_callback called
+INF:20221105:043010.226: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.227: APP: LowLevelMouseProc 512, 557, 746, 0
+INF:20221105:043010.227: APP: use_callback_mouse  
+INF:20221105:043010.227: APP: use_callback called
+INF:20221105:043010.228: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.229: APP: LowLevelMouseProc 512, 557, 746, 0
+INF:20221105:043010.230: APP: use_callback_mouse  
+INF:20221105:043010.230: APP: use_callback called
+INF:20221105:043010.232: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.233: APP: LowLevelMouseProc 512, 559, 747, 0
+INF:20221105:043010.233: APP: use_callback_mouse  
+INF:20221105:043010.233: APP: use_callback called
+INF:20221105:043010.233: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.234: APP: LowLevelMouseProc 512, 559, 747, 0
+INF:20221105:043010.234: APP: use_callback_mouse  
+INF:20221105:043010.234: APP: use_callback called
+INF:20221105:043010.235: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.236: APP: LowLevelMouseProc 512, 561, 749, 0
+INF:20221105:043010.237: APP: use_callback_mouse  
+INF:20221105:043010.237: APP: use_callback called
+INF:INF:20221105:043010.23820221105:043010.238: : APP: LowLevelMouseProc APP: callback_mouse_method_t::set_callback_args_values512
+, 561, 749, 0
+INF:20221105:043010.238: APP: use_callback_mouse  
+INF:20221105:043010.238: APP: use_callback called
+INF:20221105:043010.238: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.240: APP: LowLevelMouseProc 512, 562, 750, 0
+INF:20221105:043010.240: APP: use_callback_mouse  
+INF:20221105:043010.240: APP: use_callback called
+INF:20221105:043010.241: APP: LowLevelMouseProc 512, 563, 750, 0
+INF:20221105:043010.241: APP: use_callback_mouse  
+INF:20221105:043010.241: APP: use_callback called
+INF:20221105:043010.242: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.242: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.243: APP: LowLevelMouseProc 512, 564, 751, 0
+INF:20221105:043010.243: APP: use_callback_mouse  
+INF:20221105:043010.243: APP: use_callback called
+INF:20221105:043010.244: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.245: APP: LowLevelMouseProc 512, 565, 752, 0
+INF:20221105:043010.245: APP: use_callback_mouse  
+INF:20221105:043010.245: APP: use_callback called
+INF:20221105:043010.246: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.247: APP: LowLevelMouseProc 512, 566, 752, 0
+INF:20221105:043010.247: APP: use_callback_mouse  
+INF:20221105:043010.247: APP: use_callback called
+INF:20221105:043010.249: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.249: APP: LowLevelMouseProc 512, 567, 753, 0
+INF:20221105:043010.249: APP: use_callback_mouse  
+INF:20221105:043010.249: APP: use_callback called
+INF:20221105:043010.250: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.251: APP: LowLevelMouseProc 512, 568, 753, 0
+INF:20221105:043010.252: APP: use_callback_mouse  
+INF:20221105:043010.252: APP: use_callback called
+INF:20221105:043010.253: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.254: APP: LowLevelMouseProc 512, 568, 754, 0
+INF:20221105:043010.254: APP: use_callback_mouse  
+INF:20221105:043010.254: APP: use_callback called
+INF:20221105:043010.255: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.256: APP: LowLevelMouseProc 512, 570, 755, 0
+INF:20221105:043010.256: APP: use_callback_mouse  
+INF:20221105:043010.256: APP: use_callback called
+INF:20221105:043010.258: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.259: APP: LowLevelMouseProc 512, 570, 755, 0
+INF:20221105:043010.259: APP: use_callback_mouse  
+INF:20221105:043010.259: APP: use_callback called
+INF:20221105:043010.260: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.261: APP: LowLevelMouseProc 512, 571, 755, 0
+INF:20221105:043010.261: APP: use_callback_mouse  
+INF:20221105:043010.261: APP: use_callback called
+INF:20221105:043010.262: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.262: APP: LowLevelMouseProc 512, 572, 756, 0
+INF:20221105:043010.262: APP: use_callback_mouse  
+INF:20221105:043010.262: APP: use_callback called
+INF:20221105:043010.264: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.266: APP: LowLevelMouseProc 512, 573, 757, 0
+INF:20221105:043010.266: APP: use_callback_mouse  
+INF:20221105:043010.266: APP: use_callback called
+INF:20221105:043010.267: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.268: APP: LowLevelMouseProc 512, 574, 758, 0
+INF:20221105:043010.268: APP: use_callback_mouse  
+INF:20221105:043010.268: APP: use_callback called
+INF:20221105:043010.269: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.269: APP: LowLevelMouseProc 512, 575, 758, 0
+INF:20221105:043010.269: APP: use_callback_mouse  
+INF:20221105:043010.269: APP: use_callback called
+INF:20221105:043010.271: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.271: APP: LowLevelMouseProc 512, 576, 759, 0
+INF:20221105:043010.272: APP: use_callback_mouse  
+INF:20221105:043010.272: APP: use_callback called
+INF:20221105:043010.273: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.274: APP: LowLevelMouseProc 512, 577, 759, 0
+INF:20221105:043010.274: APP: use_callback_mouse  
+INF:20221105:043010.274: APP: use_callback called
+INF:20221105:043010.274: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.275: APP: LowLevelMouseProc 512, 577, 760, 0
+INF:20221105:043010.276: APP: use_callback_mouse  
+INF:20221105:043010.276: APP: use_callback called
+INF:20221105:043010.277: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.277: APP: LowLevelMouseProc 512, 578, 760, 0
+INF:20221105:043010.277: APP: use_callback_mouse  
+INF:20221105:043010.278: APP: use_callback called
+INF:20221105:043010.279: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.280: APP: LowLevelMouseProc 512, 579, 761, 0
+INF:20221105:043010.280: APP: use_callback_mouse  
+INF:20221105:043010.280: APP: use_callback called
+INF:20221105:043010.281: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.282: APP: LowLevelMouseProc 512, 580, 761, 0
+INF:20221105:043010.282: APP: use_callback_mouse  
+INF:20221105:043010.282: APP: use_callback called
+INF:20221105:043010.284: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.284: APP: LowLevelMouseProc 512, 580, 762, 0
+INF:20221105:043010.284: APP: use_callback_mouse  
+INF:20221105:043010.284: APP: use_callback called
+INF:20221105:043010.285: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.287: APP: LowLevelMouseProc 512, 581, 762, 0
+INF:20221105:043010.287: APP: use_callback_mouse  
+INF:20221105:043010.287: APP: use_callback called
+INF:20221105:043010.288: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.289: APP: LowLevelMouseProc 512, 582, 763, 0
+INF:20221105:043010.289: APP: use_callback_mouse  
+INF:20221105:043010.289: APP: use_callback called
+INF:20221105:043010.290: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.291: APP: LowLevelMouseProc 512, 582, 763, 0
+INF:20221105:043010.291: APP: use_callback_mouse  
+INF:20221105:043010.291: APP: use_callback called
+INF:20221105:043010.292: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.293: APP: LowLevelMouseProc 512, 583, 764, 0
+INF:20221105:043010.293: APP: use_callback_mouse  
+INF:20221105:043010.293: APP: use_callback called
+INF:20221105:043010.294: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.294: APP: LowLevelMouseProc 512, 584, 764, 0
+INF:20221105:043010.294: APP: use_callback_mouse  
+INF:20221105:043010.294: APP: use_callback called
+INF:20221105:043010.294: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.296: APP: LowLevelMouseProc 512, 584, 765, 0
+INF:20221105:043010.297: APP: use_callback_mouse  
+INF:20221105:043010.297: APP: use_callback called
+INF:20221105:043010.298: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.299: APP: LowLevelMouseProc 512, 585, 765, 0
+INF:20221105:043010.299: APP: use_callback_mouse  
+INF:20221105:043010.299: APP: use_callback called
+INF:20221105:043010.301: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.302: APP: LowLevelMouseProc 512, 586, 766, 0
+INF:20221105:043010.302: APP: use_callback_mouse  
+INF:20221105:043010.302: APP: use_callback called
+INF:20221105:043010.303: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.303: APP: LowLevelMouseProc 512, 587, 766, 0
+INF:20221105:043010.303: APP: use_callback_mouse  
+INF:20221105:043010.303: APP: use_callback called
+INF:20221105:043010.304: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.305: APP: LowLevelMouseProc 512, 587, 767, 0
+INF:20221105:043010.305: APP: use_callback_mouse  
+INF:20221105:043010.305: APP: use_callback called
+INF:20221105:043010.306: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.307: APP: LowLevelMouseProc 512, 588, 767, 0
+INF:20221105:043010.307: APP: use_callback_mouse  
+INF:20221105:043010.307: APP: use_callback called
+INF:20221105:043010.308: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.309: APP: LowLevelMouseProc 512, 588, 768, 0
+INF:20221105:043010.309: APP: use_callback_mouse  
+INF:20221105:043010.309: APP: use_callback called
+INF:20221105:043010.309: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.311: APP: LowLevelMouseProc 512, 589, 769, 0
+INF:20221105:043010.311: APP: use_callback_mouse  
+INF:20221105:043010.311: APP: use_callback called
+INF:20221105:043010.312: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.313: APP: LowLevelMouseProc 512, 590, 769, 0
+INF:20221105:043010.313: APP: use_callback_mouse  
+INF:20221105:043010.313: APP: use_callback called
+INF:20221105:043010.314: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.315: APP: LowLevelMouseProc 512, 590, 769, 0
+INF:20221105:043010.315: APP: use_callback_mouse  
+INF:20221105:043010.316: APP: use_callback called
+INF:20221105:043010.316: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.318: APP: LowLevelMouseProc 512, 591, 770, 0
+INF:20221105:043010.318: APP: use_callback_mouse  
+INF:20221105:043010.318: APP: use_callback called
+INF:20221105:043010.319: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.319: APP: LowLevelMouseProc 512, 591, 770, 0
+INF:20221105:043010.320: APP: use_callback_mouse  
+INF:20221105:043010.320: APP: use_callback called
+INF:20221105:043010.321: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.322: APP: LowLevelMouseProc 512, 591, 771, 0
+INF:20221105:043010.322: APP: use_callback_mouse  
+INF:20221105:043010.322: APP: use_callback called
+INF:20221105:043010.323: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.324: APP: LowLevelMouseProc 512, 592, 771, 0
+INF:20221105:043010.324: APP: use_callback_mouse  
+INF:20221105:043010.324: APP: use_callback called
+INF:20221105:043010.324: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.325: APP: LowLevelMouseProc 512, 592, 771, 0
+INF:20221105:043010.325: APP: use_callback_mouse  
+INF:20221105:043010.325: APP: use_callback called
+INF:20221105:043010.326: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.327: APP: LowLevelMouseProc 512, 593, 772, 0
+INF:20221105:043010.328: APP: use_callback_mouse  
+INF:20221105:043010.328: APP: use_callback called
+INF:20221105:043010.328: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.330: APP: LowLevelMouseProc 512, 594, 773, 0
+INF:20221105:043010.330: APP: use_callback_mouse  
+INF:20221105:043010.330: APP: use_callback called
+INF:20221105:043010.332: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.333: APP: LowLevelMouseProc 512, 594, 773, 0
+INF:20221105:043010.333: APP: use_callback_mouse  
+INF:20221105:043010.333: APP: use_callback called
+INF:20221105:043010.335: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.336: APP: LowLevelMouseProc 512, 595, 774, 0
+INF:20221105:043010.336: APP: use_callback_mouse  
+INF:20221105:043010.336: APP: use_callback called
+INF:20221105:043010.337: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.338: APP: LowLevelMouseProc 512, 596, 775, 0
+INF:20221105:043010.338: APP: use_callback_mouse  
+INF:20221105:043010.338: APP: use_callback called
+INF:20221105:043010.338: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.340: APP: LowLevelMouseProc 512, 596, 775, 0
+INF:20221105:043010.340: APP: use_callback_mouse  
+INF:20221105:043010.340: APP: use_callback called
+INF:20221105:043010.342: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.343: APP: LowLevelMouseProc 512, 597, 776, 0
+INF:20221105:043010.343: APP: use_callback_mouse  
+INF:20221105:043010.343: APP: use_callback called
+INF:20221105:043010.344: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.344: APP: LowLevelMouseProc 512, 598, 777, 0
+INF:20221105:043010.344: APP: use_callback_mouse  
+INF:20221105:043010.344: APP: use_callback called
+INF:20221105:043010.346: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.347: APP: LowLevelMouseProc 512, 599, 778, 0
+INF:20221105:043010.347: APP: use_callback_mouse  
+INF:20221105:043010.347: APP: use_callback called
+INF:20221105:043010.351: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.352: APP: LowLevelMouseProc 512, 600, 779, 0
+INF:20221105:043010.353: APP: use_callback_mouse  
+INF:20221105:043010.353: APP: use_callback called
+INF:20221105:043010.357: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.361: APP: LowLevelMouseProc 512, 602, 782, 0
+INF:20221105:043010.361: APP: use_callback_mouse  
+INF:20221105:043010.361: APP: use_callback called
+INF:20221105:043010.367: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.368: APP: LowLevelMouseProc 512, 604, 785, 0
+INF:20221105:043010.368: APP: use_callback_mouse  
+INF:20221105:043010.368: APP: use_callback called
+INF:20221105:043010.372: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.374: APP: LowLevelMouseProc 512, 606, 786, 0
+INF:20221105:043010.374: APP: use_callback_mouse  
+INF:20221105:043010.374: APP: use_callback called
+INF:20221105:043010.375: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.378: APP: LowLevelMouseProc 512, 607, 788, 0
+INF:20221105:043010.378: APP: use_callback_mouse  
+INF:20221105:043010.378: APP: use_callback called
+INF:20221105:043010.380: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.381: APP: LowLevelMouseProc 512, 608, 789, 0
+INF:20221105:043010.381: APP: use_callback_mouse  
+INF:20221105:043010.381: APP: use_callback called
+INF:20221105:043010.384: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.385: APP: LowLevelMouseProc 512, 609, 790, 0
+INF:20221105:043010.385: APP: use_callback_mouse  
+INF:20221105:043010.385: APP: use_callback called
+INF:20221105:043010.387: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.389: APP: LowLevelMouseProc 512, 610, 791, 0
+INF:20221105:043010.390: APP: use_callback_mouse  
+INF:20221105:043010.390: APP: use_callback called
+INF:20221105:043010.391: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.392: APP: LowLevelMouseProc 512, 610, 792, 0
+INF:20221105:043010.392: APP: use_callback_mouse  
+INF:20221105:043010.392: APP: use_callback called
+INF:20221105:043010.394: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.397: APP: LowLevelMouseProc 512, 611, 793, 0
+INF:20221105:043010.397: APP: use_callback_mouse  
+INF:20221105:043010.397: APP: use_callback called
+INF:20221105:043010.400: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.401: APP: LowLevelMouseProc 512, 612, 795, 0
+INF:20221105:043010.401: APP: use_callback_mouse  
+INF:20221105:043010.401: APP: use_callback called
+INF:20221105:043010.404: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.405: APP: LowLevelMouseProc 512, 613, 796, 0
+INF:20221105:043010.405: APP: use_callback_mouse  
+INF:20221105:043010.405: APP: use_callback called
+INF:20221105:043010.407: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.409: APP: LowLevelMouseProc 512, 614, 797, 0
+INF:20221105:043010.409: APP: use_callback_mouse  
+INF:20221105:043010.409: APP: use_callback called
+INF:20221105:043010.412: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.414: APP: LowLevelMouseProc 512, 615, 798, 0
+INF:20221105:043010.414: APP: use_callback_mouse  
+INF:20221105:043010.414: APP: use_callback called
+INF:20221105:043010.417: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.418: APP: LowLevelMouseProc 512, 615, 800, 0
+INF:20221105:043010.418: APP: use_callback_mouse  
+INF:20221105:043010.418: APP: use_callback called
+INF:20221105:043010.418: APP: callback_mouse_method_t::set_callback_args_values
+INF:20221105:043010.423: APP: LowLevelMouseProc 512, 616, 801, 0
+INF:20221105:043010.427: APP: LowLevelMouseProc 512, 617, 802, 0
+INF:20221105:043010.432: APP: LowLevelMouseProc 512, 618, 804, 0
+INF:20221105:043010.436: APP: LowLevelMouseProc 512, 619, 805, 0
+INF:20221105:043010.439: APP: LowLevelMouseProc 512, 619, 805, 0
+INF:20221105:043010.442: APP: LowLevelMouseProc 512, 620, 806, 0
+INF:20221105:043010.445: APP: LowLevelMouseProc 512, 620, 807, 0
+INF:20221105:043010.448: APP: LowLevelMouseProc 512, 621, 808, 0
+INF:20221105:043010.451: APP: LowLevelMouseProc 512, 621, 809, 0
+INF:20221105:043010.453: APP: LowLevelMouseProc 512, 622, 809, 0
+INF:20221105:043010.455: APP: LowLevelMouseProc 512, 622, 810, 0
+INF:20221105:043010.457: APP: LowLevelMouseProc 512, 622, 810, 0
+INF:20221105:043010.461: APP: LowLevelMouseProc 512, 623, 810, 0
+INF:20221105:043010.463: APP: LowLevelMouseProc 512, 623, 811, 0
+INF:20221105:043010.465: APP: LowLevelMouseProc 512, 623, 812, 0
+INF:20221105:043010.468: APP: LowLevelMouseProc 512, 623, 812, 0
+INF:20221105:043010.470: APP: LowLevelMouseProc 512, 623, 813, 0
+INF:20221105:043010.472: APP: LowLevelMouseProc 512, 624, 813, 0
+INF:20221105:043010.474: APP: LowLevelMouseProc 512, 624, 813, 0
+INF:20221105:043010.481: APP: LowLevelMouseProc 512, 624, 813, 0
+INF:20221105:043010.485: APP: LowLevelMouseProc 512, 624, 814, 0
+INF:20221105:043010.542: APP: LowLevelMouseProc 513, 624, 814, 0
+INF:20221105:043010.542: APP: switch_input 
+INF:20221105:043010.542: APP: process_commands id 8
+INF:20221105:043010.543: APP: unhook_user_input 
+DBG:20221105:043010.543: APP: unhook_win_pos
+INF:20221105:043010.543: APP: Input unhooked
+INF:20221105:043010.543: APP: apply_interactive_mode_view 
