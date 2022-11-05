@@ -278,7 +278,7 @@ napi_value SetWindowPosCallback(napi_env env, napi_callback_info args)
 {
 	log_info << "APP: SetWindowPosCallback " << std::endl;
 	log_info << win_position_callback_info << std::endl;
-	log_debug << "Is ready win position" << win_position_callback_info -> ready << "end" << std::endl;
+	log_debug << "Is ready win position" << win_position_callback_info->ready << "end" << std::endl;
 	if (win_position_callback_info->ready)
 	{
 		log_debug << "Delete reference win position" << win_position_callback_info << std::endl;
@@ -502,6 +502,38 @@ napi_value PaintOverlay(napi_env env, napi_callback_info args)
 	return ret;
 }
 
+napi_value SetOverlayColorKey(napi_env env, napi_callback_info args)
+{
+	napi_value ret = nullptr;
+
+	size_t argc = 2;
+	napi_value argv[2];
+
+	if (napi_get_cb_info(env, args, &argc, argv, NULL, NULL) != napi_ok)
+		return failed_ret;
+
+	int set_color_key_res = -1;
+	if (argc == 2)
+	{
+		int overlay_id = -1;
+		bool overlay_enabled;
+
+		if (napi_get_value_int32(env, argv[0], &overlay_id) != napi_ok)
+			return failed_ret;
+
+		if (napi_get_value_bool(env, argv[1], &overlay_enabled) != napi_ok)
+			return failed_ret;
+
+		log_info << "APP: SetOverlayColorKey " << overlay_enabled << std::endl;
+		set_color_key_res = set_overlay_color_key(overlay_id, overlay_enabled);
+	}
+
+	if (napi_create_int32(env, set_color_key_res, &ret) != napi_ok)
+		return failed_ret;
+
+	return ret;
+}
+
 napi_value SetOverlayTransparency(napi_env env, napi_callback_info args)
 {
 	napi_value ret = nullptr;
@@ -667,6 +699,11 @@ napi_value init(napi_env env, napi_value exports)
 	if (napi_create_function(env, nullptr, 0, SetOverlayTransparency, nullptr, &fn) != napi_ok)
 		return failed_ret;
 	if (napi_set_named_property(env, exports, "setTransparency", fn) != napi_ok)
+		return failed_ret;
+
+	if (napi_create_function(env, nullptr, 0, SetOverlayColorKey, nullptr, &fn) != napi_ok)
+		return failed_ret;
+	if (napi_set_named_property(env, exports, "setColorKey", fn) != napi_ok)
 		return failed_ret;
 
 	if (napi_create_function(env, nullptr, 0, SetOverlayVisibility, nullptr, &fn) != napi_ok)

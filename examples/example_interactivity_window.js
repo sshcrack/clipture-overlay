@@ -27,6 +27,7 @@ function createWindow() {
 		show: false,
 		width: 700,
 		height: 700,
+		transparent: true,
 		frame: false,
 		webPreferences: {
 			offscreen: true,
@@ -37,12 +38,12 @@ function createWindow() {
 	win.loadURL(`https://www.google.com/search?q=1`);
 	//win.loadURL(`https://unixpapa.com/js/testkey.html`);  //to test input 
 
-	let hwnd = cppHWNDToBuffer(1509708)//win.getNativeWindowHandle();
+	let hwnd = cppHWNDToBuffer(46010002)//win.getNativeWindowHandle();
 	console.log(win.getNativeWindowHandle())
 	let overlayid = streamlabs_overlays.addHWND(hwnd);
 
 	streamlabs_overlays.show();
-	streamlabs_overlays.setTransparency(overlayid, 100);
+	streamlabs_overlays.setTransparency(overlayid, 255);
 	streamlabs_overlays.setPosition(overlayid, 100, 100, 700, 700);
 
 	win.webContents.on('paint', (event, dirty, image) => {

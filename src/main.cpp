@@ -100,6 +100,19 @@ DWORD WINAPI overlay_thread_func(void* data)
 				catched = true;
 			}
 			break;
+			case WM_SLO_OVERLAY_COLOR_KEY:
+			{
+				log_info << "APP: WM_SLO_OVERLAY_COLOR_KEY " << (int)msg.wParam << ", " << (bool)msg.lParam << std::endl;
+				std::shared_ptr<overlay_window> overlay = app->get_overlay_by_id((int)msg.wParam);
+
+				if (overlay != nullptr)
+				{
+					overlay->set_color_key((bool)msg.lParam);
+				}
+				catched = true;
+			}
+			break;
+
 			case WM_SLO_OVERLAY_VISIBILITY:
 			{
 				log_info << "APP: WM_SLO_OVERLAY_VISIBILITY " << (int)msg.wParam << ", " << (int)msg.lParam << std::endl;

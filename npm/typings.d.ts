@@ -126,6 +126,15 @@ export function setPosition(
 export function setTransparency(overlayId: OverlayId, transparency: number): void;
 
 /**
+ * Set an overlay's color key (meaning that 0x111111 and #fff will be transparent on that page)
+ *
+ * @param overlayId ID of the overlay to set the transparency for
+ * @param enabled Wether it should be enabled or not, can't use transparency and color key at the same time
+ */
+export function setColorKey(overlayId: OverlayId, enabled: boolean): void;
+
+
+/**
  * Set an overlay's visibility
  *
  * @param overlayId ID of the overlay to set the visibility for

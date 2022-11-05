@@ -96,6 +96,8 @@ const int COMMAND_RELEASE_INPUT = 8;
 //signal for overlay thread that it can create window for new overlay
 #define WM_SLO_OVERLAY_COMMAND (WM_USER + 44)
 
+#define WM_SLO_OVERLAY_COLOR_KEY (WM_USER + 45)
+
 
 bool set_dpi_awareness();
 

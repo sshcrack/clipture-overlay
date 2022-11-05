@@ -397,6 +397,30 @@ int WINAPI set_overlay_transparency(int id, int transparency)
 	return id;
 }
 
+
+int WINAPI set_overlay_color_key(int id, bool enabled)
+{
+	thread_state_mutex.lock();
+	if (thread_state != sl_overlay_thread_state::running)
+	{
+		thread_state_mutex.unlock();
+		return -1;
+	} else
+	{
+		BOOL ret = PostThreadMessage(overlays_thread_id, WM_SLO_OVERLAY_COLOR_KEY, id, enabled);
+		thread_state_mutex.unlock();
+
+		if (!ret)
+		{
+			return -1;
+		}
+
+		return id;
+	}
+
+	return id;
+}
+
 int WINAPI set_overlay_visibility(int id, bool visibility)
 {
 	thread_state_mutex.lock();

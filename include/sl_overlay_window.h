@@ -69,6 +69,7 @@ class overlay_window
 	virtual void create_render_target(ID2D1Factory* m_pDirect2dFactory){};
 	bool is_content_updated();
 	void set_transparency(int transparency, bool save_as_normal = true);
+	void set_color_key(bool enabled);
 	int get_transparency();
 	void set_visibility(bool visibility, bool overlays_shown);
 	bool is_visible();

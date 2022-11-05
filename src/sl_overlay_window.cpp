@@ -35,6 +35,17 @@ void overlay_window::set_transparency(int transparency, bool save_as_normal)
 	}
 }
 
+void overlay_window::set_color_key(bool enabled) {
+	if(!enabled) {
+		set_transparency(overlay_transparency, true);
+		return;
+	}
+
+	if(overlay_hwnd != 0) {
+		SetLayeredWindowAttributes(overlay_hwnd, 0x111111, 255, LWA_COLORKEY);
+	}
+}
+
 void overlay_window::set_visibility(bool visibility, bool overlays_shown)
 {
 	if (overlay_hwnd != 0)
