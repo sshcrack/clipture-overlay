@@ -172,7 +172,7 @@ int WINAPI remove_overlay(int id)
 
 static int (*callback_keyboard_ptr)(WPARAM, LPARAM) = nullptr;
 static int (*callback_mouse_ptr)(WPARAM, LPARAM) = nullptr;
-static int (*callback_win_position_ptr)(HWND, LPRECT) = nullptr;
+static int (*callback_win_position_ptr)(HWND, RECT) = nullptr;
 static int (*callback_switch_ptr)() = nullptr;
 
 int WINAPI set_callback_for_keyboard_input(int (*ptr)(WPARAM, LPARAM))
@@ -220,6 +220,7 @@ int WINAPI set_callback_for_window_position(int (*ptr)(HWND, RECT))
 	log_debug << "Set Callback for position" << std::endl;
 
 	auto winList = smg_overlays::get_instance()->showing_windows;
+	callback_win_position_ptr = ptr;
 	std::for_each(winList.begin(), winList.end(), [&ptr](std::shared_ptr<overlay_window>& n) {
 		n ->callback_window_pos_ptr = ptr;
 	});
@@ -265,6 +266,8 @@ int WINAPI add_overlay_by_hwnd(const void* hwnd_array, size_t array_size)
 			memcpy(&hwnd, hwnd_array, sizeof(HWND));
 
 			ret = smg_overlays::get_instance()->create_overlay_window_by_hwnd(hwnd);
+			std::shared_ptr<overlay_window> win = smg_overlays::get_instance() -> get_overlay_by_id(ret);
+			win -> callback_window_pos_ptr = callback_win_position_ptr;
 
 			thread_state_mutex.unlock();
 		}
